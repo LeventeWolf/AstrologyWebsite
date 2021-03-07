@@ -1,5 +1,5 @@
 * {
-background-image: url("csillagos.jpg");
+    background-image: url("csillagos.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -8,17 +8,19 @@ background-image: url("csillagos.jpg");
 .top-menu {
     text-align: center;
     border: 2px solid white;
-    margin-left: 250px;
-    margin-right: 250px;
+
 }
 
 
 .main-div {
-    text-align: left;
+    text-align: justify;
     border: 2px solid white;
     background: rgba(44, 16, 129, 0.45);
-    padding: 20px;
-    margin-left: 250px;
-    margin-right: 250px;
+    padding: 5%;
+    margin-left: 17%;
+    margin-right: 17%;
     height: 1000px;
+
+
+
 }
