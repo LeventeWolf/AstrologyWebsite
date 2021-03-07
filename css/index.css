@@ -1,3 +1,10 @@
+* {
+background-image: url("csillagos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
 .top-menu {
     text-align: center;
     border: 2px solid white;
@@ -7,7 +14,7 @@
 
 
 .main-div {
-    text-align: center;
+    text-align: left;
     border: 2px solid white;
     background: rgba(44, 16, 129, 0.45);
     padding: 20px;
