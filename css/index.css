@@ -1,12 +1,14 @@
 * {
-    background-image: url("csillagos.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: transparent;
+    text-align: justify;
     color: white;
 }
 
 .top-menu {
     text-align: center;
+    background-image: url("../images/stars.jpg");
+    background-size: cover;
+    height: 150px;
     border: 2px solid white;
 
 }
@@ -15,16 +17,29 @@
 
 }
 
+body{
+
+    background-image: url("../images/csillagos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+
+
+}
+
+table {
+    border-spacing: 20px;
+}
+
 
 .main-div {
-    text-align: justify;
+
+
     border: 2px solid white;
-    background: rgba(44, 16, 129, 0.45);
     padding: 5%;
     margin-left: 17%;
     margin-right: 17%;
     height: 1000px;
-
 
 
 }
