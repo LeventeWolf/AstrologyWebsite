@@ -1,0 +1,10 @@
+.sidebar {
+    background-color: white;
+
+    position: absolute;
+    right: 0;
+    width: 255px;
+    height: 970px;
+
+    color: black;
+}
