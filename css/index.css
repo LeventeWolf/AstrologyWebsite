@@ -1,7 +1,6 @@
 * {
     background: transparent;
     text-align: justify;
-    color: white;
 }
 
 .top-menu {
@@ -21,13 +20,12 @@
 }
 
 body{
-
     background-image: url("../images/csillagos.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
 
-
+    overflow-x: hidden; /* túlcsordulás szabályozása */
 }
 
 table {
