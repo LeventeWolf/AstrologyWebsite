@@ -1,16 +1,18 @@
 * {
     background: transparent;
     text-align: justify;
-    color: white;
 }
 
 .top-menu {
-    text-align: center;
+    position: fixed; /* gördítéskor is rögzített helyen marad. */
     background-image: url("../images/stars.jpg");
     background-size: cover;
+    margin-left: 17%;
+    margin-right: 17%;
     height: 150px;
+    width: 1500px;
+    text-align: center;
     border: 2px solid white;
-
 }
 .footer {
     background: black;
@@ -18,13 +20,12 @@
 }
 
 body{
-
     background-image: url("../images/csillagos.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
 
-
+    overflow-x: hidden; /* túlcsordulás szabályozása */
 }
 
 table {
