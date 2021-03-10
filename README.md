@@ -20,4 +20,4 @@ University project for web design
 - [ ] Kép elem használata [1]
 - [ ] Nyomtatási stíluslap [2]
 
-Határidő: 2021.03.14
+**Határidő: 2021.03.14**
