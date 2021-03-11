@@ -23,6 +23,8 @@
 
 .sidebar table td {
     /*border: 5px solid blue;*/
+    padding-left: 15px;
+    padding-bottom: 10px;
 }
 
 .sidebar table tr:nth-child(1), .sidebar table tr:nth-child(2) {
