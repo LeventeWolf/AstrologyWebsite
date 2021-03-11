@@ -1,7 +1,13 @@
-* {
-    background: transparent;
+body{
+    background-image: url("../images/csillagos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    color: white;
+
     text-align: justify;
-    color: #ffffff;
+
+    overflow-x: hidden; /* túlcsordulás szabályozása */
 }
 
 .top-menu {
@@ -11,35 +17,37 @@
     margin-left: 17%;
     margin-right: 17%;
     height: 150px;
-    width: 1500px;
+    width: 1288px;
     text-align: center;
     border: 2px solid white;
 }
-.footer {
-    background: black;
+
+.top-menu table{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 5px solid black;
 }
 
-body{
-    background-image: url("../images/csillagos.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: black;
-    color: white;
-
-    overflow-x: hidden; /* túlcsordulás szabályozása */
+.top-menu table td {
+    width: 200px;
 }
+
+.main-div {
+    border: 2px solid white;
+    padding: 5%;
+    margin-left: 17%;
+    margin-right: 17%;
+    width: 1100px;
+    height: 1000px;
+}
+
 
 table {
     border-spacing: 20px;
 }
 
 
-.main-div {
-
-
-    border: 2px solid white;
-    padding: 5%;
-    margin-left: 17%;
-    margin-right: 17%;
-    height: 1000px;
+.footer {
+    background: black;
 }
