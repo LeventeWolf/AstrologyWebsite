@@ -1,0 +1,48 @@
+body{
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    color: white;
+
+    text-align: justify;
+    font-family: "Times New Roman", sans-serif;
+
+    overflow-x: hidden; /* túlcsordulás szabályozása */
+}
+
+.top-menu {
+    background-image: url("../images/stars.jpg");
+    background-size: cover;
+    margin-top: 20px;
+    margin-left: 17%;
+    margin-right: 17%;
+    height: 150px;
+    width: 1288px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.top-menu table{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 5px solid black;
+}
+
+.top-menu table td {
+    width: 200px;
+}
+
+.main-div {
+    border: 2px solid white;
+    padding: 3%;
+    margin-left: 17%;
+    margin-right: 17%;
+    width: 1175px;
+    height: 1000px;
+}
+
+table {
+    border-spacing: 20px;
+}
