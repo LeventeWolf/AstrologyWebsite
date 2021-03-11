@@ -13,35 +13,72 @@
         <fieldset>
         <legend>  Születési adatok megadása </legend>
 
-            <input type="number" >
-            <input type="number">
-            <input type="number">
-            <input type="number">
-            <input type="number">
 
 
-            <select>
-                <option> Január</option>
-                <option> Február</option>
-                <option> Március</option>
-                <option> Április</option>
-                <option> Május</option>
-                <option> Június</option>
-                <option> Július</option>
-                <option> Augusztus</option>
-                <option> Szeptember</option>
-                <option> Október</option>
-                <option> November</option>
-                <option> December</option>
+            <label > Hónap
+                <select>
+                    <option> Január</option>
+                    <option> Február</option>
+                    <option> Március</option>
+                    <option> Április</option>
+                    <option> Május</option>
+                    <option> Június</option>
+                    <option> Július</option>
+                    <option> Augusztus</option>
+                    <option> Szeptember</option>
+                    <option> Október</option>
+                    <option> November</option>
+                    <option> December</option>
 
-            </select>
+                </select>
+            </label>
+
+            <label > Nap
+                <select name="norm[um][d]" class="form-control input-sm">
+                    <option value="01">1</option>
+                    <option value="02">2</option>
+                    <option value="03">3</option>
+                    <option value="04">4</option>
+                    <option value="05">5</option>
+                    <option value="06">6</option>
+                    <option value="07">7</option>
+                    <option value="08">8</option>
+                    <option value="09">9 </option>
+                    <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                    <option value="13">13</option><option value="14">14</option><option value="15">15</option>
+                    <option value="16">16</option><option value="17">17</option><option value="18">18</option>
+                    <option value="19">19</option><option value="20">20</option><option value="21">21</option>
+                    <option value="22">22</option><option value="23">23</option><option value="24">24</option>
+                    <option value="25">25</option><option value="26">26</option><option value="27">27</option>
+                    <option value="28">28</option><option value="29">29</option><option value="30">30</option>
+                    <option value="31">31</option></select>
+            </label>
+
+
+
         </fieldset>
 
 
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname"><br><br>
-        <label for="lname">Last name:</label>
+        <label for="fname">Vezetéknév:</label>
+        <input type="text" name="fname"><br><br>
+
+        <label for="lname">Keresztnév:</label>
+        <input type="text" name="lname"><br><br>
+        <label for="fname">:</label>
+        <input type="text"  name="fname"><br><br>
+        <label for="lname">Év:</label>
+        <input type="text"  name="lname"><br><br>
+        <input type="submit" value="Submit">
+        <label for="fname">Hónap:</label>
+        <input type="text"  name="fname"><br><br>
+        <label for="lname">Nap:</label>
+        <input type="text"  name="lname"><br><br>
+        <label for="fname">Óra:</label>
+        <input type="text"  name="fname"><br><br>
+        <label for="lname">Perc:</label>
         <input type="text" id="lname" name="lname"><br><br>
+
+
         <input type="submit" value="Submit">
     </form>
 
