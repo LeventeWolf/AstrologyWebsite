@@ -1,87 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
 
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <title>Szülestési adatok</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../css/birth-form.css">
 
 </head>
 <body>
+<form>
+    <fieldset>
+        <legend>Születési adatok</legend>
 
 
-    <form action="/action_page.php" method="POST" target="_blank">
-        <fieldset>
-        <legend>  Születési adatok megadása </legend>
+        <label>Teljes név*: <input type="text" name="full-name" size="25" required /></label> <br/>
 
+        <label>Születési dátum*: <input type="date" name="date-of-birth" min="1900-01-01" required /></label> <br/>
 
+        <label>Születési óra*: <input type="number" name="date-hour" min="0" max="23" required /></label> <br/>
 
-            <label > Hónap
-                <select>
-                    <option> Január</option>
-                    <option> Február</option>
-                    <option> Március</option>
-                    <option> Április</option>
-                    <option> Május</option>
-                    <option> Június</option>
-                    <option> Július</option>
-                    <option> Augusztus</option>
-                    <option> Szeptember</option>
-                    <option> Október</option>
-                    <option> November</option>
-                    <option> December</option>
+        <label>Születési perc*: <input type="number" name="date-minute" min="0" max="60" /></label> <br/>
 
-                </select>
-            </label>
+        <label>Hely*: <input type="text" name="place" size="25"required/></label> <br/>
 
-            <label > Nap
-                <select name="norm[um][d]" class="form-control input-sm">
-                    <option value="01">1</option>
-                    <option value="02">2</option>
-                    <option value="03">3</option>
-                    <option value="04">4</option>
-                    <option value="05">5</option>
-                    <option value="06">6</option>
-                    <option value="07">7</option>
-                    <option value="08">8</option>
-                    <option value="09">9 </option>
-                    <option value="10">10</option><option value="11">11</option><option value="12">12</option>
-                    <option value="13">13</option><option value="14">14</option><option value="15">15</option>
-                    <option value="16">16</option><option value="17">17</option><option value="18">18</option>
-                    <option value="19">19</option><option value="20">20</option><option value="21">21</option>
-                    <option value="22">22</option><option value="23">23</option><option value="24">24</option>
-                    <option value="25">25</option><option value="26">26</option><option value="27">27</option>
-                    <option value="28">28</option><option value="29">29</option><option value="30">30</option>
-                    <option value="31">31</option></select>
-            </label>
+        <label>Felhasználónév: <input type="text" name="username" ></label> <br/>
 
+        <label>Jelszó: <input type="password" name="passwd" required/></label> <br/>
 
+        <label>Jelszó ismét: <input type="password" name="passwd-check" required/></label> <br/>
 
-        </fieldset>
+        <label>E-mail: <input type="email" name="email"/></label> <br/>
+    </fieldset>
 
+    Nem:
+    <label for="op1">Férfi:</label>
+    <input type="radio" id="op1" name="sex" value="m"/>
+    <label for="op2">Nő:</label>
+    <input type="radio" id="op2" name="sex" value="f"/>
+    <label for="op3">Egyéb:</label>
+    <input type="radio" id="op3" name="sex" value="other" checked/> <br/>
 
-        <label for="fname">Vezetéknév:</label>
-        <input type="text" name="fname"><br><br>
+    Hobbik:
 
-        <label for="lname">Keresztnév:</label>
-        <input type="text" name="lname"><br><br>
-        <label for="fname">:</label>
-        <input type="text"  name="fname"><br><br>
-        <label for="lname">Év:</label>
-        <input type="text"  name="lname"><br><br>
-        <input type="submit" value="Submit">
-        <label for="fname">Hónap:</label>
-        <input type="text"  name="fname"><br><br>
-        <label for="lname">Nap:</label>
-        <input type="text"  name="lname"><br><br>
-        <label for="fname">Óra:</label>
-        <input type="text"  name="fname"><br><br>
-        <label for="lname">Perc:</label>
-        <input type="text" id="lname" name="lname"><br><br>
+    <label for="introduction">Megjegyzés (300 karakter):</label> <br/>
+    <textarea id="introduction" name="intro" maxlength="300"></textarea> <br/>
 
-
-        <input type="submit" value="Submit">
-    </form>
-
-
+    <input type="reset" name="reset-btn" value="Adatok törlése"/>
+    <input type="submit" name="submit-btn" value="Adatok elküldése"/>
+</form>
 </body>
 </html>
