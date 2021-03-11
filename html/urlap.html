@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <title>Szülestési adatok</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../css/birth-form.css">
+
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Születési adatok</legend>
+
+
+        <label>Teljes név*: <input type="text" name="full-name" size="25" required /></label> <br/>
+
+        <label>Születési dátum*: <input type="date" name="date-of-birth" min="1900-01-01" required /></label> <br/>
+
+        <label>Születési óra*: <input type="number" name="date-hour" min="0" max="23" required /></label> <br/>
+
+        <label>Születési perc*: <input type="number" name="date-minute" min="0" max="60" /></label> <br/>
+
+        <label>Hely*: <input type="text" name="place" size="25"required/></label> <br/>
+
+        <label>Felhasználónév: <input type="text" name="username" ></label> <br/>
+
+        <label>Jelszó: <input type="password" name="passwd" required/></label> <br/>
+
+        <label>Jelszó ismét: <input type="password" name="passwd-check" required/></label> <br/>
+
+        <label>E-mail: <input type="email" name="email"/></label> <br/>
+    </fieldset>
+
+    Nem:
+    <label for="op1">Férfi:</label>
+    <input type="radio" id="op1" name="sex" value="m"/>
+    <label for="op2">Nő:</label>
+    <input type="radio" id="op2" name="sex" value="f"/>
+    <label for="op3">Egyéb:</label>
+    <input type="radio" id="op3" name="sex" value="other" checked/> <br/>
+
+    Hobbik:
+
+    <label for="introduction">Megjegyzés (300 karakter):</label> <br/>
+    <textarea id="introduction" name="intro" maxlength="300"></textarea> <br/>
+
+    <input type="reset" name="reset-btn" value="Adatok törlése"/>
+    <input type="submit" name="submit-btn" value="Adatok elküldése"/>
+</form>
+</body>
+</html>
