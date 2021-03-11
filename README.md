@@ -16,8 +16,8 @@ University project for web design
 - [ ] Linkek használata [1]
 - [ ] Lista használata [1]
 - [ ] CSS formázás [2]
-- [ ] Táblázat elemek szabályos használata [4]
-- [ ] Kép elem használata [1]
+- [+] Táblázat elemek szabályos használata [4]
+- [+] Kép elem használata [1]
 - [ ] Nyomtatási stíluslap [2]
 
 **Határidő: 2021.03.14**
