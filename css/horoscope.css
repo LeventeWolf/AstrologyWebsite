@@ -1,5 +1,9 @@
 body{
     background-image: url("../images/zodiac-bg.jpg");
+}
+
+.main-div {
+    background-image: linear-gradient(rgba(33, 6, 91, 0.96), rgba(152, 92, 16, 0.9));
     background-size: cover;
     color: white;
 }
