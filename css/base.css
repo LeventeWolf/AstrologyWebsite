@@ -34,6 +34,11 @@ body{
     z-index: 2;
 }
 
+#nav a {
+    font-size: 24pt;
+    font-weight: bold;
+}
+
 #nav table{
     text-align: center;
     vertical-align: top;
