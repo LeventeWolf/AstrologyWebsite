@@ -4,6 +4,9 @@
     background-image: linear-gradient(rgb(7, 4, 59), rgba(100, 100, 100, 0.2));
     border-radius: 25px;
 
+    /*
+    todo Levi : Amikor a kepre nagyutunk ugyan akkora marad a sidebar es kitakarja a taralmat(nekem nincs ötletem)
+     */
     top: 20px;
     right: 0;
     width: 255px;
