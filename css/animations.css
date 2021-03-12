@@ -10,6 +10,22 @@
     }
 }
 
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+
+#main h1 {
+    animation-duration: 2s;
+    animation-name: appear;
+}
+
 #main p, #main h2 {
     animation-duration: 1.5s;
     animation-name: slidein;
