@@ -11,11 +11,11 @@ University project for web design
 - [ ] Alapvető strukturális elemek céljuknak megfelelően használva [5]
   
 #### Molnár Ádám:        
-- [ ] Formai követelmények [1]
-- [ ] Szabványos HTML oldalak	[10]
-- [ ] Linkek használata [1]
-- [ ] Lista használata [1]
-- [ ] CSS formázás [2]
+- [x] Formai követelmények [1]
+- [x] Szabványos HTML oldalak	[10]
+- [x] Linkek használata [1]
+- [x] Lista használata [1]
+- [x] CSS formázás [2]
 - [x] Táblázat elemek szabályos használata [4]
 - [x] Kép elem használata [1]
 - [ ] Nyomtatási stíluslap [2]
