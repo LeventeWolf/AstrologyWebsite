@@ -24,23 +24,7 @@ p {
     margin: 50px;
     line-height: 30px;
 }
-a{
 
-}
-
-a:link, a:visited  {
-    color: coral;
-    text-shadow: black 3px 3px;
-    text-decoration: none;
-}
-
-a:hover {
-    color: purple;
-}
-
-a:active {
-    color: rebeccapurple;
-}
 
 li{
     margin: 60px;

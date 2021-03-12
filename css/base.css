@@ -1,3 +1,8 @@
+
+/*
+todo Levi ha kicsinyitjuk a kepernyot a fejlec es a center body szélessége eltér egymástól
+ */
+
 body{
     background-image: none;
     background-repeat: no-repeat;
@@ -45,4 +50,18 @@ body{
 
 table {
     border-spacing: 20px;
+}
+
+a:link, a:visited  {
+    color: coral;
+    text-shadow: black 3px 3px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: purple;
+}
+
+a:active {
+    color: rebeccapurple;
 }
