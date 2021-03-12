@@ -1,31 +1,25 @@
-body{
+body {
     background-image: url("../images/planets.jpg");
-    font-size: 22px;
 }
-h1{
-    font-size: 40px  ;
-
-}
-
-h3{
-    font-size: 30px;
-}
-
-img{
-    filter: invert(1);
-}
-
-
 
 .main-div {
-    /*TODO Adam: adjust background-image (color) */
     background-image: linear-gradient(rgba(7, 4, 59, 0.56), rgba(24, 21, 84, 0.4));
     height: 100%;
+}
+
+.main-div h1 {
+    font-size: 40px;
+}
+
+.main-div h3 {
+    font-size: 30px;
 }
 
 .main-div table img {
     width: 250px;
     height: 250px;
+
+    filter: invert(1);
 }
 
 .footer {
