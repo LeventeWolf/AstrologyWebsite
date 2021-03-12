@@ -2,3 +2,64 @@ body {
     /*TODO adam add background image*/
     background-image: url("../images/csillagos.jpg");
 }
+
+#main{
+    /*TODO Adam add linear gradient*/
+    background-color: rgba(7, 4, 59, 0.8);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* TODO Levi understand this */
+    width: 40%;
+    height: 60%;
+    border: 2px solid white;
+}
+
+/* TODO Levi rewrite/understand below this */
+.container .text {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container form .data {
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+form .data label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form .data input {
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 17px;
+    border: 1px solid silver;
+}
+
+form .data input:focus {
+    border-color: #3498db;
+    border-bottom-width: 2px;
+}
+
+form .forgot-pass {
+    margin-top: -8px;
+    font-size: 20px;
+    text-align: right;
+}
+
+form .forgot-pass a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+form .forgot-pass a:hover {
+    text-decoration: underline;
+}
