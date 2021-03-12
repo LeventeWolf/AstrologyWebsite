@@ -2,13 +2,8 @@ body{
     background-image: url("../images/csillagos.jpg");
 }
 
-.main-div {
+#main {
     /*TODO Adam: adjust background-image (color) */
     background-image: linear-gradient(rgba(7, 4, 59, 0.96), rgba(24, 21, 84, 0.4));
     background-size: cover;
-    color: white;
-}
-
-.footer {
-    background: black;
 }

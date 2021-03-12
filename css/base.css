@@ -1,5 +1,3 @@
-/* TODO Levi ha kicsinyitjuk a kepernyot a fejlec es a center body szélessége eltér egymástól */
-
 body{
     background-image: none;
     background-repeat: no-repeat;
@@ -16,18 +14,27 @@ body{
     font-size: 22px;
 }
 
-header {
+#header {
+    position: fixed;
+    padding: 10px;
+    background-color: rgba(118, 116, 153, 0.7);
+    text-align: center;
+    width:16%;
+}
+
+#nav {
     background-image: url("../images/stars.jpg");
     background-size: cover;
-    position: fixed;
-    width: 100%;
+    margin-left: 17%;
+    margin-right: 17%;
+    width: 66%;
     border: 2px solid rgba(100, 100, 100, 0.5);
     font-size: 17pt;
 
     z-index: 2;
 }
 
-header table{
+#nav table{
     text-align: center;
     vertical-align: top;
     width: 100%;
@@ -35,19 +42,16 @@ header table{
     /*border: 5px solid grey;*/
 }
 
-header table td {
+#nav table td {
     width: 200px;
 }
 
-.main-div {
-    position: relative;
-    top: 140px;
-
+#main {
     border: 2px solid rgba(100, 100, 100, 0.5);
     padding: 3%;
     margin-left: 17%;
     margin-right: 17%;
-    width: 1175px;
+    width: 60%;
     height: 1000px;
 
     z-index: -1;
@@ -71,10 +75,11 @@ a:active {
     color: rebeccapurple;
 }
 
-footer div {
+#footer {
     text-align: center;
     position: relative;
-    bottom: -90px;
+    bottom: 0;
     background-color: rgb(5, 3, 50);
+    height: 25px;
     z-index: 2;
 }
