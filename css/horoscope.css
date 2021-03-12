@@ -14,13 +14,6 @@ body{
     line-height: 25px;
 }
 
-#main h1{
-    text-align: center;
-    font-weight: bold;
-    font-size: 50px;
-    text-shadow: 1px 1px grey;
-}
-
 #main h2{
     font-size: 30px;
     text-align: center;
