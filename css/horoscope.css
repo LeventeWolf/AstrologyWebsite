@@ -1,5 +1,50 @@
 body{
     background-image: url("../images/zodiac-bg.jpg");
+    font-size: 24px;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    text-shadow: 1px 1px grey;
+}
+
+h2{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+
+}
+h3{
+    font-size: 25px;
+}
+
+p {
+    text-indent: 50px;
+    margin: 50px;
+    line-height: 30px;
+}
+a{
+
+}
+
+a:link, a:visited  {
+    color: coral;
+    text-shadow: black 3px 3px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: purple;
+}
+
+a:active {
+    color: rebeccapurple;
+}
+
+li{
+    margin: 60px;
+    line-height: 25px;
 }
 
 .main-div {
