@@ -1,32 +1,33 @@
 body{
     background-image: url("../images/zodiac-bg.jpg");
-    font-size: 24px;
+
 }
-h1{
+
+.main-div h1{
     text-align: center;
     font-weight: bold;
     font-size: 50px;
     text-shadow: 1px 1px grey;
 }
 
-h2{
+.main-div h2{
     font-size: 30px;
     text-align: center;
     font-weight: bold;
 
 }
-h3{
+.main-div h3{
     font-size: 25px;
 }
 
-p {
+.main-div p {
     text-indent: 50px;
     margin: 50px;
     line-height: 30px;
 }
 
 
-li{
+.top-menu li{
     margin: 60px;
     line-height: 25px;
 }
