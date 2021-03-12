@@ -3,37 +3,36 @@ body{
 
 }
 
-.main-div h1{
+#main {
+    background-image: linear-gradient(rgba(33, 6, 91, 0.96), rgba(152, 92, 16, 0.9));
+    background-size: cover;
+    color: white;
+}
+
+#nav li{
+    margin: 60px;
+    line-height: 25px;
+}
+
+#main h1{
     text-align: center;
     font-weight: bold;
     font-size: 50px;
     text-shadow: 1px 1px grey;
 }
 
-.main-div h2{
+#main h2{
     font-size: 30px;
     text-align: center;
     font-weight: bold;
 
 }
-.main-div h3{
+#main h3{
     font-size: 25px;
 }
 
-.main-div p {
+#main p {
     text-indent: 50px;
     margin: 50px;
     line-height: 30px;
-}
-
-
-.top-menu li{
-    margin: 60px;
-    line-height: 25px;
-}
-
-.main-div {
-    background-image: linear-gradient(rgba(33, 6, 91, 0.96), rgba(152, 92, 16, 0.9));
-    background-size: cover;
-    color: white;
 }
