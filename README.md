@@ -3,7 +3,7 @@ University project for web design
 
 ## Munkaterv 
 #### Wolf Levente:
-- [ ] Formai követelmények [1]
+- [x] Formai követelmények [1]
 - [ ] CSS formázás [2]
 - [ ] Div illetve HTML5 elemekkel van kialakítva [3]
 - [ ] Űrlap kialakítása, űrlapelemek használata [7]
