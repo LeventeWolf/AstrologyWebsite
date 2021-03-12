@@ -7,8 +7,8 @@ University project for web design
 - [ ] CSS formázás [2]
 - [x] Div illetve HTML5 elemekkel van kialakítva [3]
 - [ ] Űrlap kialakítása, űrlapelemek használata [7]
-- [ ] Elemkijelölő, azonosítókijelölő, osztálykijelölő, összetett kijelölők használata [4]
-- [ ] Alapvető strukturális elemek céljuknak megfelelően használva [5]
+- [X] Elemkijelölő, azonosítókijelölő, osztálykijelölő, összetett kijelölők használata [4]
+- [X] Alapvető strukturális elemek céljuknak megfelelően használva [5]
   
 #### Molnár Ádám:        
 - [x] Formai követelmények [1]
