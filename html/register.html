@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Astrology - Register</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+
+<!--Header-->
+<div id="header">
+    <header>
+        <p>AstrologyWebsite</p>
+    </header>
+</div>
+
+<!--Top-Navigation-bar-->
+<div id="nav">
+    <nav>
+        <table>
+            <tr>
+                <td>
+                    <a href="planets.html">Bolygók</a>
+                </td>
+                <td>
+                    <a href="horoscope.html">Horoszkóp</a>
+                </td>
+                <td>
+                    <a href="index.html">Astrology</a>
+                </td>
+                <td>
+                    <a href="login.html">Login</a>
+                </td>
+                <td class="active-wrapper">
+                    <a class="active" href="register.html">Register</a>
+                </td>
+            </tr>
+        </table>
+    </nav>
+</div>
+
+<!--Sidebar-->
+<div id="sidebar">
+    <aside>
+        <div>
+            <table>
+                <tr>
+                    <!-- profile_pic -->
+                    <td>
+                        <img src="../images/default_profile_picture.png" alt="default">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-style: italic">
+                        Username
+                        <hr>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <!--                Planet:-->
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <!--                Zodiac sign:-->
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </aside>
+</div>
+
+<!--Main div-->
+<div id="main">
+    <main>
+        <form>
+            <label>Felhasználónév: <input type="text" name="username" ></label> <br/>
+
+            <label>Jelszó: <input type="password" name="passwd" required/></label> <br/>
+
+            <label>Jelszó ismét: <input type="password" name="passwd-check" required/></label> <br/>
+
+            <label>E-mail: <input type="email" name="email"/></label> <br/>
+
+            <fieldset>
+                <legend>Születési adatok</legend>
+
+
+                <label>Teljes név*: <input type="text" name="full-name" size="25" required /></label> <br/>
+
+                <label>Születési dátum*: <input type="date" name="date-of-birth" min="1900-01-01" required /></label> <br/>
+
+                <label>Születési óra*: <input type="number" name="date-hour" min="0" max="23" required /></label> <br/>
+
+                <label>Születési perc*: <input type="number" name="date-minute" min="0" max="60" /></label> <br/>
+
+                <label>Hely*: <input type="text" name="place" size="25"required/></label> <br/>
+
+
+            </fieldset>
+
+            Nem:
+            <label for="op1">Férfi:</label>
+            <input type="radio" id="op1" name="sex" value="m"/>
+            <label for="op2">Nő:</label>
+            <input type="radio" id="op2" name="sex" value="f"/>
+            <label for="op3">Egyéb:</label>
+            <input type="radio" id="op3" name="sex" value="other" checked/> <br/>
+
+            Hobbik:
+
+            <label for="introduction">Megjegyzés (300 karakter):</label> <br/>
+            <textarea id="introduction" name="intro" maxlength="300"></textarea> <br/>
+
+            <input type="reset" name="reset-btn" value="Adatok törlése"/>
+            <input type="submit" name="submit-btn" value="Adatok elküldése"/>
+        </form>
+    </main>
+</div>
+
+<!--Footer-->
+<div id="footer">
+    <footer>
+        Készítette: Wolf Levente és Molnár Ádám
+    </footer>
+</div>
+
+</body>
+</html>
