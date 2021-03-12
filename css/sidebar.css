@@ -1,35 +1,32 @@
-/* TODO Levi : Amikor a kepre nagyutunk ugyan akkora marad a sidebar es kitakarja a taralmat(nekem nincs ötletem)*/
-
-.sidebar {
+#sidebar {
     position: fixed;
 
     background-image: linear-gradient(rgb(7, 4, 59), rgba(100, 100, 100, 0.2));
     border-radius: 25px;
 
-
-    top: 140px;
-    right: 0;
-    width: 255px;
-    height: 970px;
+    top: 5px;
+    right: 5px;
+    width: 15%;
+    height: 800px;
 
     color: white;
 }
 
-.sidebar img {
+#sidebar img {
     width: 150px;
     height: 150px;
 }
 
-.sidebar table {
+#sidebar table {
     width: 100%;
 }
 
-.sidebar table td {
+#sidebar table td {
     /*border: 5px solid blue;*/
     padding-left: 15px;
     padding-bottom: 10px;
 }
 
-.sidebar table tr:nth-child(1), .sidebar table tr:nth-child(2) {
+#sidebar table tr:nth-child(1), #sidebar table tr:nth-child(2) {
     text-align: center;
 }
