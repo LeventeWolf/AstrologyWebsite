@@ -5,7 +5,7 @@ University project for web design
 #### Wolf Levente:
 - [x] Formai követelmények [1]
 - [ ] CSS formázás [2]
-- [ ] Div illetve HTML5 elemekkel van kialakítva [3]
+- [x] Div illetve HTML5 elemekkel van kialakítva [3]
 - [ ] Űrlap kialakítása, űrlapelemek használata [7]
 - [ ] Elemkijelölő, azonosítókijelölő, osztálykijelölő, összetett kijelölők használata [4]
 - [ ] Alapvető strukturális elemek céljuknak megfelelően használva [5]
