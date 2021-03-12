@@ -6,6 +6,7 @@ body{
     background-size: cover;
     background-color: black;
     color: white;
+    margin: 0;
 
     text-align: justify;
     font-family: "Times New Roman", sans-serif;
@@ -15,36 +16,41 @@ body{
     font-size: 22px;
 }
 
-.top-menu {
+header {
     background-image: url("../images/stars.jpg");
     background-size: cover;
-    margin-top: 20px;
-    margin-left: 17%;
-    margin-right: 17%;
-    height: 150px;
-    width: 1288px;
-    text-align: center;
-    border: 2px solid white;
+    position: fixed;
+    width: 100%;
+    border: 2px solid rgba(100, 100, 100, 0.5);
+    font-size: 17pt;
+
+    z-index: 2;
 }
 
-.top-menu table{
+header table{
     text-align: center;
+    vertical-align: top;
     width: 100%;
-    height: 100%;
+    height: 20px;
     /*border: 5px solid grey;*/
 }
 
-.top-menu table td {
+header table td {
     width: 200px;
 }
 
 .main-div {
-    border: 2px solid white;
+    position: relative;
+    top: 140px;
+
+    border: 2px solid rgba(100, 100, 100, 0.5);
     padding: 3%;
     margin-left: 17%;
     margin-right: 17%;
     width: 1175px;
     height: 1000px;
+
+    z-index: -1;
 }
 
 table {
@@ -63,4 +69,12 @@ a:hover {
 
 a:active {
     color: rebeccapurple;
+}
+
+footer div {
+    text-align: center;
+    position: relative;
+    bottom: -90px;
+    background-color: rgb(5, 3, 50);
+    z-index: 2;
 }
