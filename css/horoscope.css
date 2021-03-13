@@ -29,3 +29,8 @@ body{
     margin: 50px;
     line-height: 30px;
 }
+
+#outline{
+    outline-style: inset ;
+    outline-color: black ;
+}
