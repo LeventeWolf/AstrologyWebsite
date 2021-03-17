@@ -47,6 +47,11 @@ body{
     z-index: 2;
 }
 
+#nav ul li {
+    display: inline-block;
+    margin: 10px 55px 10px 55px;
+}
+
 #nav a {
     font-size: 24pt;
     font-weight: bold;
