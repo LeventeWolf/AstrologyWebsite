@@ -33,6 +33,7 @@ body{
     background-color: rgba(118, 116, 153, 0.7);
     text-align: center;
     width:16%;
+    border-radius: 20px;
 }
 
 #nav {
