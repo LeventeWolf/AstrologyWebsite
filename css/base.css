@@ -14,6 +14,19 @@ body{
     font-size: 22px;
 }
 
+@media only screen and (max-width: 600px) {
+    * {
+        background-image: none; !important;
+    }
+}
+
+/*landscape: When the width of this document is larger than the height*/
+@media only screen and (orientation: portrait) { /* <=> portrait */
+    #main {
+        background-color: darkblue;
+    }
+}
+
 #header {
     position: fixed;
     padding: 10px;
