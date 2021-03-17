@@ -1,3 +1,4 @@
+/*MAIN animation*/
 @keyframes slidein {
     from {
         margin-top: 100%;
@@ -20,7 +21,6 @@
     }
 }
 
-
 #main h1 {
     animation-duration: 2s;
     animation-name: appear;
@@ -37,7 +37,10 @@
     50%  {color: blue;}
     100% {color: green;}
 }
+/*END MAIN animation*/
 
+
+/* NAV animations*/
 @keyframes spin {
     100% {
         transform: rotate(360deg);
@@ -52,7 +55,12 @@
     font-size: 30pt;
     animation: color-change 10s infinite;
 }
+/*END NAV animations*/
 
 
+/* LOGIN/REGISTER animations*/
+.container {
+    animation: appear 1s linear;
+}
 
 
