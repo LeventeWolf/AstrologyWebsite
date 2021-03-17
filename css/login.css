@@ -6,60 +6,25 @@ body {
 #main{
     /*TODO Adam add linear gradient*/
     background-color: rgba(7, 4, 59, 0.8);
+    /*border: 2px solid white;*/
+    height: 700px;
 }
 
 .container {
+    padding: 10px;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%); /* TODO Levi understand this */
+
+    /*A pozitív értékek jobbra/le a negatív értékek balra/fel történő eltolást eredményeznek.*/
+    transform: translate(-50%, -50%); /*vízszintes, függöleges*/
     width: 40%;
-    height: 60%;
+    height: 20%;
     border: 2px solid white;
 }
 
-/* TODO Levi rewrite/understand below this */
-.container .text {
-    font-size: 35px;
-    font-weight: 600;
+.text {
+    font-size: 20pt;
     text-align: center;
-}
-
-.container form .data {
-    height: 45px;
     width: 100%;
-    margin: 40px 0;
-}
-
-form .data label {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-form .data input {
-    height: 100%;
-    width: 100%;
-    padding-left: 10px;
-    font-size: 17px;
-    border: 1px solid silver;
-}
-
-form .data input:focus {
-    border-color: #3498db;
-    border-bottom-width: 2px;
-}
-
-form .forgot-pass {
-    margin-top: -8px;
-    font-size: 20px;
-    text-align: right;
-}
-
-form .forgot-pass a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-form .forgot-pass a:hover {
-    text-decoration: underline;
 }

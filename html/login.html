@@ -83,38 +83,19 @@
 <div id="main">
     <main>
         <div class="container">
-            <div class="text">Login Form</div>
-                <form>
+            <div class="text">Bejelentkezés</div>
 
-                    <!--Username-->
-                    <div class=data>
-                        <label>Username</label>
-                        <label>
-                            <input type=text name=username required>
-                        </label>
-                    </div>
+            <form>
+                <!--Username-->
+                <label>Felhasználónév: <input type="text" name="username" required ></label> <br/>
 
-                    <!--Password-->
-                    <div class=data>
-                        <label>Password</label>
-                        <input type=password name=password required>
-                    </div>
+                <!--Password-->
+                <label>Jelszó: <input type="password" name="passwd" required/></label> <br/>
 
+                <!--Login In Button-->
+                <button type='submit' name='submit'>Bejelentkezés</button>
+            </form>
 
-                    <!--Forgot password-->
-                    <div class='forgot-pass'>
-                        <a href='#'>Forgot Password?</a>
-                    </div>
-
-
-                    <!--Login In Button-->
-                    <div class='btn'>
-                        <div class='inner'>
-                        </div>
-                        <button type='submit' name='submit'>login</button>
-                    </div>
-
-                </form>
         </div>
     </main>
 </div>
