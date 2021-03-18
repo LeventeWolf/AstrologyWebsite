@@ -8,6 +8,7 @@ body {
     background-color: rgba(7, 4, 59, 0.8);
     /*border: 2px solid white;*/
     height: 700px;
+    position: static;
 }
 
 .container {
