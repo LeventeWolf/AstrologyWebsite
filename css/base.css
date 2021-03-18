@@ -58,17 +58,6 @@ body{
     font-weight: bold;
 }
 
-#nav table{
-    text-align: center;
-    vertical-align: top;
-    width: 100%;
-    height: 20px;
-    /*border: 5px solid grey;*/
-}
-
-#nav table td {
-    width: 200px;
-}
 
 #main {
     border: 2px solid rgba(100, 100, 100, 0.5);
