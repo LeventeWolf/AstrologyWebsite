@@ -16,7 +16,10 @@ body{
 
 @media only screen and (max-width: 600px) {
     * {
-        background-image: none; !important;
+        background-image: none;
+    }
+    #sidebar {
+        display: none;
     }
 }
 
