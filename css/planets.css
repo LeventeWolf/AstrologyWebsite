@@ -25,3 +25,13 @@ body {
 #footer {
     background: black;
 }
+
+
+.szemely::selection{
+    background: cyan;
+}
+
+.transz::selection{
+     background: orange;
+
+ }
