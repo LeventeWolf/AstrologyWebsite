@@ -18,6 +18,6 @@ University project for web design
 - [x] CSS formázás [2]
 - [x] Táblázat elemek szabályos használata [4]
 - [x] Kép elem használata [1]
-- [ ] Nyomtatási stíluslap [2]
+- [x] Nyomtatási stíluslap [2]
 
 **Határidő: 2021.03.14**
