@@ -62,6 +62,17 @@
 }
 /*END NAV animations*/
 
+/* SIDEBAR animations
+
+#sidebar img{
+    width: 10px;
+    transition: height 1s linear, width 1s linear, z-index 2s linear;
+}
+
+/*END SIDEBAR animations*/
+
+
+
 
 /* LOGIN/REGISTER animations*/
 .container {
