@@ -15,6 +15,7 @@
 #sidebar img {
     width: 150px;
     height: 150px;
+    /*transition: height 1s linear, width 1s linear, z-index 2s linear;*/
 }
 
 #sidebar table {
