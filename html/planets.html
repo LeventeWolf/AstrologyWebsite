@@ -50,25 +50,25 @@
             <table>
                 <tr>
                     <!-- profile_pic -->
-                    <td>
+                    <td headers="profPic">
                         <img src="../images/default_profile_picture.png" alt="default">
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-style: italic">
+                    <td headers="userName" style="font-style: italic">
                         Username
                         <hr>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td headers="planet">
                         <!--                Planet:-->
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td headers="zoodiacSign">
                         <!--                Zodiac sign:-->
                     </td>
                 </tr>
@@ -84,18 +84,18 @@
         <!--Tablazat-->
         <table>
             <tr>
-                <th>Bolygók</th>
-                <th>Tulajdonságaik</th>
+                <th id="bolygo">Bolygók</th>
+                <th id="tul">Tulajdonságaik</th>
             </tr>
 
 
             <tr>
-                <td>
+                <td headers="bolygo">
                     <h3 class="szemely">Nap</h3>
                     <img src="../images/sun.png" alt="nap">
                 </td>
 
-                <td>A fő világító égitest, Ő adja az életerőt , a személyiség 20-25%-át teszi ki, Mivel az oroszlán
+                <td headers="tul">A fő világító égitest, Ő adja az életerőt , a személyiség 20-25%-át teszi ki, Mivel az oroszlán
                     jegyéhez
                     kapcsolható
                     , így a nap is a fensőbbséget, az irányítást, az ünnepet, a dicsőséget és más ehhez hasonló
@@ -107,13 +107,13 @@
 
             <tr>
 
-                <td>
+                <td headers="bolygo">
                     <h3 class="szemely">Hold</h3>
                     <img src="../images/moon.jpg" alt="hold">
                 </td>
 
 
-                <td>Második legfontosabb égitest, mivel egy nagyon gyorsan halad, jellemző rá a változékonyság.
+                <td headers="tul">Második legfontosabb égitest, mivel egy nagyon gyorsan halad, jellemző rá a változékonyság.
                     Hasonlóképpen
                     változnak az érzelmeink is napról napra ,óráról órára más lehet a hangulatunk, ezért főleg a hold
                     felelős.
@@ -124,11 +124,11 @@
             </tr>
             <tr>
 
-                <td>
+                <td headers="bolygo">
                     <h3 class="szemely">Merkúr</h3>
                     <img src="../images/mercury.png" alt="merkur">
                 </td>
-                <td>A merkúr magát a gondolkodásmódunkat , beszédmódunkat jelképezi. A merkúr mondhatni egy szemüveg,
+                <td headers="tul">A merkúr magát a gondolkodásmódunkat , beszédmódunkat jelképezi. A merkúr mondhatni egy szemüveg,
                     amin
                     keresztül
                     a világot látjuk. Semleges bolygó tehát nincs polaritása , nemtelen. Ide tartozik: mozgás, írás,
@@ -139,11 +139,11 @@
 
             <tr>
 
-                <td>
+                <td headers="bolygo">
                     <h3 class="szemely">Mars</h3>
                     <img src="../images/mars.jpg" alt="mars">
                 </td>
-                <td>Az erő szimbóluma. Bármi amiben megjelenik az erőszak valmilyen formája, ott ott van a mars. Akár
+                <td headers="tul">Az erő szimbóluma. Bármi amiben megjelenik az erőszak valmilyen formája, ott ott van a mars. Akár
                     egy
                     futásról van szó,
                     kitartás kell, erő kell hozzá. De egy sebész, egy fodrászban is megjelenik(konkrétan megfosz a
@@ -156,11 +156,11 @@
 
             <tr>
 
-                <td>
+                <td headers="bolygo">
                     <h3 class="szemely">Vénusz</h3>
                     <img src="../images/venus.png" alt="venusz">
                 </td>
-                <td>Érdekes, mert a vénusznak elég szerteágazóak az analógiái. Egyrészt a mars , a férfi párját a
+                <td headers="tul">Érdekes, mert a vénusznak elég szerteágazóak az analógiái. Egyrészt a mars , a férfi párját a
                     nőiességet,
                     a szépséget is jelképezi
                     ,másrészt a pénz, ingatlanok szimbóluma is. Persze a nőnek a nőiességét, egy férfinek a neki tetsző
@@ -173,11 +173,11 @@
 
             <tr>
 
-                <td>
+                <td headers="bolygo">
                     <h3 class="szemely">Jupiter</h3>
                     <img src="../images/jupiter.png" alt="jupiter">
                 </td>
-                <td>A nagy szerencse bolygójának is nevezik, amelyik házban áll , azon a területen lehetünk igazán
+                <td headers="tul">A nagy szerencse bolygójának is nevezik, amelyik házban áll , azon a területen lehetünk igazán
                     boldogok.
                     Mivel tudunk azonosulni, beleélni magunkat? Erre a kérdésre is választ ad a jupiter. Bár fontos,hogy
                     megbecsüljük,
@@ -187,11 +187,11 @@
 
             <tr>
 
-                <td>
+                <td headers="bolygo">
                     <h3 class="szemely">Szaturnusz</h3>
                     <img src="../images/saturn.png" alt="szaturnusz">
                 </td>
-                <td><q>A nagy szerencsétlenség bolygólya</q> persze ez is csak mondás, lehet nagyon hasznosan is
+                <td headers="tul"><q>A nagy szerencsétlenség bolygólya</q> persze ez is csak mondás, lehet nagyon hasznosan is
                     használni az
                     életünkben.
                     A sazturnusz magát a határokat, a korlátainkat jelenti. Ha szeretnénk céltudatosak, elszántak
@@ -203,11 +203,11 @@
             </tr>
 
             <tr>
-                <td>
+                <td headers="bolygo">
                     <h3 class="transz">Uránusz</h3>
                     <img src="../images/uranus.png" alt="uranusz">
                 </td>
-                <td>Transzcendens bolygó, azaz már kevésbé hat a személyiségre mint az előzőek. Az új világi dolgokat,
+                <td headers="tul">Transzcendens bolygó, azaz már kevésbé hat a személyiségre mint az előzőek. Az új világi dolgokat,
                     az
                     informatikát
                     ,elektronikát, heterótól eltérő szexualitásokat, műanyag dolgokat és minden mást jelent, ami 100 éve
@@ -219,11 +219,11 @@
 
             <tr>
 
-                <td>
+                <td headers="bolygo">
                     <h3 class="transz">Uránusz</h3>
                     <img src="../images/neptun.png" alt="neptun">
                 </td>
-                <td>A zavarosság és az áldozathozatal bolygója. Könnyű rossz dologként megélni, de ha belegndolunk, a
+                <td headers="tul">A zavarosság és az áldozathozatal bolygója. Könnyű rossz dologként megélni, de ha belegndolunk, a
                     szerelem
                     egy rózsazín
                     felhő, a drogok ,az alkoholos italok is a zavarosság párhuzamai. Az önfeláldozás, vagy áldozati
@@ -236,11 +236,11 @@
             </tr>
             <tr>
 
-                <td>
+                <td headers="bolygo">
                     <h3 class="transz">Plútó</h3>
                     <img src="../images/pluto.png" alt="pluto">
                 </td>
-                <td>Ez élet és a halál kapuja a Plútó. A szexualitás is hozzáköthető. Persze a halált nem kell
+                <td headers="tul">Ez élet és a halál kapuja a Plútó. A szexualitás is hozzáköthető. Persze a halált nem kell
                     feltétlenül
                     konkrétan értelmezni
                     A halál lehet az adott év halála és egy új kezdete, egy kapcsolat halála és egy új kezdete. Vagy
