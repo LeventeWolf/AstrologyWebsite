@@ -31,3 +31,10 @@ body {
     text-align: center;
     width: 100%;
 }
+
+.error-box {
+    margin-top: 10px;
+    display: inline-block;
+    background-color: red;
+    color: black;
+}
