@@ -31,7 +31,7 @@
                 <a href="horoscope.html">Horoszkóp</a>
             </li>
             <li>
-                <a href="index.html">Astrology</a>
+                <a href="index.php">Astrology</a>
             </li>
             <li>
                 <a href="login.php">Login</a>
@@ -83,68 +83,70 @@
     <main>
         <div class="container">
             <div class="text">Regisztráció</div>
-            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <label>Felhasználónév: <input type="text" name="username" required ></label> <br/>
+            <form method="POST" action="register.php">
+                <div class="labels">
+                    <label>Felhasználónév:<br> <input type="text" name="username" required ></label> <br/>
 
-                <label>Jelszó: <input type="password" name="password" required/></label> <br/>
+                    <label>Jelszó:<br> <input type="password" name="password" required/></label> <br/>
 
-                <label>Jelszó ismét: <input type="password" name="passwordre" required/></label> <br/>
+                    <label>Jelszó ismét:<br> <input type="password" name="passwordre" required/></label> <br/>
 
-                <comment>
-                    <!--                <label>E-mail: <input type="email" name="email" required/></label> <br/>-->
-                    <!---->
-                    <!---->
-                    <!--mezőcsoportosítás-->
-                    <!--                <fieldset>-->
-                    <!--mezőcsoportosítás felirata-->
-                    <!--                    <legend>Születési adatok</legend>-->
-                    <!---->
-                    <!--                    <label>Teljes név*: <input type="text" name="full-name" size="25" required /></label> <br/>-->
-                    <!---->
-                    <!--                    <label>Születési dátum*: <input type="date" name="date-of-birth" min="1900-01-01" required /></label> <br/>-->
-                    <!---->
-                    <!--                    <label>Születési óra*: <input type="number" name="date-hour" min="0" max="23" required /></label> <br/>-->
-                    <!---->
-                    <!--                    <label>Születési perc*: <input type="number" name="date-minute" min="0" max="60" /></label> <br/>-->
-                    <!---->
-                    <!--                    <label>Hely*: <input type="text" name="place" size="25" required/></label> <br/>-->
-                    <!---->
-                    <!---->
-                    <!--                    Nem:-->
-                    <!--                    <label for="op1">Férfi:</label>-->
-                    <!--                    <input type="radio" id="op1" name="sex" value="m"/>-->
-                    <!--                    <label for="op2">Nő:</label>-->
-                    <!--                    <input type="radio" id="op2" name="sex" value="f"/>-->
-                    <!--                    <label for="op3">Egyéb:</label>-->
-                    <!--                    <input type="radio" id="op3" name="sex" value="other" checked/> <br/>-->
-                    <!--                </fieldset>-->
-                    <!---->
-                    <!--                Kedvenc bolygó:-->
-                    <!--                <select>-->
-                    <!--                    <option value="earth" selected>Föld</option>-->
-                    <!--                    <option value="moon" >Hold</option>-->
-                    <!--                    <option value="mars">Mars</option>-->
-                    <!--                    <option value="jupiter">Jupiter</option>-->
-                    <!--                    <option value="saturn">Szaturnusz</option>-->
-                    <!--                </select> <br>-->
-                    <!---->
-                    <!--                Kedvenc szín:-->
-                    <!--                <input type="color" name="color"/> <br/>-->
-                    <!---->
-                    <!--                <label for="introduction">Megjegyzés (300 karakter):</label> <br/>-->
-                    <!--                <textarea id="introduction" name="intro" maxlength="300"></textarea> <br/>-->
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!--                <input type="hidden"/> <br>-->
-                    <!---->
-                    <!--                Általános szerződési feltételek elfogadása:-->
-                    <!--                <input  type="checkbox"> <br>-->
-                    <!---->
-                    <!--                <input type="reset" name="reset-btn" value="Adatok törlése"/>-->
-                </comment>
+                    <comment>
+                        <!--                <label>E-mail: <input type="email" name="email" required/></label> <br/>-->
+                        <!---->
+                        <!---->
+                        <!--mezőcsoportosítás-->
+                        <!--                <fieldset>-->
+                        <!--mezőcsoportosítás felirata-->
+                        <!--                    <legend>Születési adatok</legend>-->
+                        <!---->
+                        <!--                    <label>Teljes név*: <input type="text" name="full-name" size="25" required /></label> <br/>-->
+                        <!---->
+                        <!--                    <label>Születési dátum*: <input type="date" name="date-of-birth" min="1900-01-01" required /></label> <br/>-->
+                        <!---->
+                        <!--                    <label>Születési óra*: <input type="number" name="date-hour" min="0" max="23" required /></label> <br/>-->
+                        <!---->
+                        <!--                    <label>Születési perc*: <input type="number" name="date-minute" min="0" max="60" /></label> <br/>-->
+                        <!---->
+                        <!--                    <label>Hely*: <input type="text" name="place" size="25" required/></label> <br/>-->
+                        <!---->
+                        <!---->
+                        <!--                    Nem:-->
+                        <!--                    <label for="op1">Férfi:</label>-->
+                        <!--                    <input type="radio" id="op1" name="sex" value="m"/>-->
+                        <!--                    <label for="op2">Nő:</label>-->
+                        <!--                    <input type="radio" id="op2" name="sex" value="f"/>-->
+                        <!--                    <label for="op3">Egyéb:</label>-->
+                        <!--                    <input type="radio" id="op3" name="sex" value="other" checked/> <br/>-->
+                        <!--                </fieldset>-->
+                        <!---->
+                        <!--                Kedvenc bolygó:-->
+                        <!--                <select>-->
+                        <!--                    <option value="earth" selected>Föld</option>-->
+                        <!--                    <option value="moon" >Hold</option>-->
+                        <!--                    <option value="mars">Mars</option>-->
+                        <!--                    <option value="jupiter">Jupiter</option>-->
+                        <!--                    <option value="saturn">Szaturnusz</option>-->
+                        <!--                </select> <br>-->
+                        <!---->
+                        <!--                Kedvenc szín:-->
+                        <!--                <input type="color" name="color"/> <br/>-->
+                        <!---->
+                        <!--                <label for="introduction">Megjegyzés (300 karakter):</label> <br/>-->
+                        <!--                <textarea id="introduction" name="intro" maxlength="300"></textarea> <br/>-->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!--                <input type="hidden"/> <br>-->
+                        <!---->
+                        <!--                Általános szerződési feltételek elfogadása:-->
+                        <!--                <input  type="checkbox"> <br>-->
+                        <!---->
+                        <!--                <input type="reset" name="reset-btn" value="Adatok törlése"/>-->
+                    </comment>
+                </div>
 
-                <input type="submit" name="submit-btn" value="Adatok elküldése"/>
+                <input id="regisztracio" type="submit" name="submit-btn" value="Regisztráció"/>
                 <br>
 
                 <!-- HandleRegistration  -->

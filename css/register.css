@@ -5,36 +5,81 @@ body {
 
 #main {
     /*TODO Adam add linear gradient*/
-    background-color: rgba(7, 4, 59, 0.8);
+    /*background-color: rgba(7, 4, 59, 0.8);*/
     position: static;
-    /*border: 2px solid white;*/
+    border: none;
     height: 700px;
 }
 
 .container {
-    padding: 10px;
+    background-color: rgba(50, 50, 59, 1);
+    color: #e8a088;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 22px;
 
+    padding: 10px 10% 20px 10%;
     position: absolute;
-    border: 2px solid white;
-
-    top: 50%;
+    top: 40%;
     left: 50%;
 
     /*A pozitív értékek jobbra/le a negatív értékek balra/fel történő eltolást eredményeznek.*/
     transform: translate(-50%, -50%); /*vízszintes, függöleges*/
-    width: 40%;
-    height: 60%;
+    width: 20%;
+    height: 400px;
+    /*border: 5px solid rgba(49, 48, 60, 1);*/
 }
 
-.text {
-    font-size: 20pt;
+.text  {
+    font-size: 35pt;
+    font-weight: 600;
     text-align: center;
+
+    /*border: 2px solid black;*/
+}
+
+.labels {
+    margin: 20px auto 20px auto;
+    /*border: 4px solid red;*/
+    width: 60%;
+}
+
+input {
+    font-size: 17px;
+    border: 1px solid silver;
     width: 100%;
 }
 
-.error-box {
+.submit-btn {
+    display: block;
     margin-top: 10px;
-    display: inline-block;
-    background-color: red;
-    color: black;
+    height: 44px;
+    width: 100%;
+
+
+}
+
+form {
+    /*border: 3px solid blue;*/
+}
+
+.labels {
+    margin: 20px auto 20px auto;
+    /*border: 4px solid red;*/
+    width: 60%;
+}
+
+#regisztracio:hover {
+    background-color: rgb(90, 88, 110);
+}
+
+#regisztracio {
+    font-size: 20pt;
+    color: white;
+    background-color: rgb(45, 41, 100);;
+    padding: 2%;
+    outline: none;
+    border: none;
+    border-radius: 22px;
+    width: 100%;
 }
