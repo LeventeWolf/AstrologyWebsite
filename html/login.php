@@ -31,7 +31,7 @@
                 <a href="horoscope.html">Horoszkóp</a>
             </li>
             <li>
-                <a href="index.html">Astrology</a>
+                <a href="index.php">Astrology</a>
             </li>
             <li class="active-wrapper">
                 <a class="active" href="login.php">Login</a>
@@ -55,10 +55,21 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-style: italic">
-                        Username
+                    <?php
+                    $username = "Username";
+
+                    if (isset($_SESSION["username"])){
+                        $username = $_SESSION["username"];
+                    }
+
+                    echo "
+                    <td style='font-style: italic'>
+                        $username
                         <hr>
                     </td>
+                    ";
+                    ?>
+
                 </tr>
 
                 <tr>
@@ -84,7 +95,7 @@
         <div class="container">
             <div class="text">Bejelentkezés</div>
 
-            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <form method="POST" action="login.php">
                 <?php
                 $blink = "";
                 $account = "";
@@ -98,7 +109,7 @@
                 }
 
                 echo "
-                    <div class='name-pwd'>
+                    <div class='labels'>
                         <!--Username-->
                         <label>Felhasználónév:<br> <input type=text name=username required ></label> <br/>
         
@@ -124,6 +135,7 @@
                     } else {
                         session_unset();
                         echo "sikeres bejelentkezés! $username";
+//                        header("Location: index.php");
                         $_SESSION["username"] = $username;
                         $_SESSION["login"] = true;
                     }
