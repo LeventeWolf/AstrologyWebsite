@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="hu">
 <head>
     <link rel="stylesheet" href="../css/base.css">
@@ -29,7 +29,7 @@
                 <a href="horoscope.html">Horoszkóp</a>
             </li>
             <li class="active-wrapper">
-                <a class="active" href="index.html">Astrology</a>
+                <a class="active" href="index.php">Astrology</a>
             </li>
             <li>
                 <a href="login.php">Login</a>
