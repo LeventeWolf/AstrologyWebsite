@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php session_start();
+
+if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
+    $isLoggedIn = true;
+} else {
+    $isLoggedIn = false;
+}
+?>
+
+
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
@@ -21,21 +30,34 @@
 <div id="nav">
     <nav>
         <ul>
-            <li>
-                <a href="planets.html">Bolygók</a>
-            </li>
-            <li class="active-wrapper">
-                <a class="active" href="horoscope.html">Horoszkóp</a>
-            </li>
-            <li>
-                <a href="index.php">Astrology</a>
-            </li>
-            <li>
-                <a href="login.php">Login</a>
-            </li>
-            <li>
-                <a href="register.php">Register</a>
-            </li>
+            <!-- Planets -->
+            <li><a href="planets.php">Bolygók</a></li>
+
+            <!-- Horoscope -->
+            <li class="active-wrapper"><a class="active" href="horoscope.php">Horoszkóp</a></li>
+
+            <!-- Astrology -->
+            <li><a href="index.php">Astrology</a></li>
+
+            <?php if ($isLoggedIn) {
+                echo "
+                <!-- Profile -->
+                <li><a href='profile.php'>Profile</a></li>
+                
+                <!-- Log out -->
+                <li><a href='#'>Log out</a></li>
+                ";
+            } else {
+                echo "
+                <!-- Login -->
+                <li><a href='login.php'>Login</a></li>
+    
+                <!-- Register -->
+                <li><a href='register.php'>Register</a></li>
+                ";
+            }
+            ?>
+
         </ul>
     </nav>
 </div>
@@ -45,31 +67,17 @@
     <aside>
         <div>
             <table>
-                <tr>
-                    <!-- profile_pic -->
-                    <td>
-                        <img src="../images/default_profile_picture.png" alt="default">
-                    </td>
-                </tr>
-                <tr>
-                    <td style="font-style: italic">
-                        Username
-                        <hr>
-                    </td>
-                </tr>
+                <!-- Profile_Picutre -->
+                <tr><td><img src="../images/default_profile_picture.png" alt="default"></td></tr>
 
-                <tr>
-                    <td>
-                        <!--                Planet:-->
-                    </td>
-                </tr>
+                <!-- Username -->
+                <tr><td headers="i" id="username"><?php if ($isLoggedIn) echo "$_SESSION[username]" ?><hr></td></tr>
 
-                <tr>
-                    <td>
-                        <!--                Zodiac sign:-->
-                    </td>
-                </tr>
+                <!-- Planet -->
+                <tr><td></td></tr>
 
+                <!-- Zodiac sign -->
+                <tr><td></td></tr>
             </table>
         </div>
     </aside>
@@ -158,9 +166,9 @@
                     <img src="../images/keplet.jpg" alt="keplet" usemap="#keplet">
 
                     <map name="keplet">
-                        <area shape="circle" coords="110,30,40" alt="Bolygók" href="../html/planets.html">
-                        <area shape="circle" alt="Bolygók" coords="100,230,40" href="../html/planets.html">
-                        <area alt="Bolygók" href="../html/planets.html" shape="circle" coords="250,190,40">
+                        <area shape="circle" coords="110,30,40" alt="Bolygók" href="planets.php">
+                        <area shape="circle" alt="Bolygók" coords="100,230,40" href="planets.php">
+                        <area alt="Bolygók" href="planets.php" shape="circle" coords="250,190,40">
 
                     </map>
 

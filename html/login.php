@@ -43,10 +43,10 @@ if (isset($_POST["submit"])) {
     <nav>
         <ul>
             <li>
-                <a href="planets.html">Bolygók</a>
+                <a href="planets.php">Bolygók</a>
             </li>
             <li>
-                <a href="horoscope.html">Horoszkóp</a>
+                <a href="horoscope.php">Horoszkóp</a>
             </li>
             <li>
                 <a href="index.php">Astrology</a>
@@ -66,43 +66,21 @@ if (isset($_POST["submit"])) {
     <aside>
         <div>
             <table>
-                <tr>
-                    <!-- profile_pic -->
-                    <td>
-                        <img src="../images/default_profile_picture.png" alt="default">
-                    </td>
-                </tr>
-                <tr>
-                    <?php
-                    if (isset($_SESSION["isLoggedIn"]) and $_SESSION["isLoggedIn"]) {
-                        $username = $_SESSION["username"];
-                    } else {
-                        $username = "Username";
-                    }
+                <!-- Profile_Picture -->
+                <tr> <td><img src="../images/default_profile_picture.png" alt="default"></td></tr>
 
-                    echo "
-                    <td style='font-style: italic'>
-                        $username
+                <!--Username-->
+                <tr>
+                    <td>
                         <hr>
                     </td>
-                    ";
-                    ?>
-
                 </tr>
 
                 <!-- Planet -->
-                <tr>
-                    <td>
-
-                    </td>
-                </tr>
+                <tr><td></td></tr>
 
                 <!-- Zodiac sign -->
-                <tr>
-                    <td>
-
-                    </td>
-                </tr>
+                <tr><td></td></tr>
 
             </table>
         </div>

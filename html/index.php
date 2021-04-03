@@ -1,11 +1,18 @@
+<?php session_start();
+
+if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
+    $isLoggedIn = true;
+} else {
+    $isLoggedIn = false;
+}
+?>
 
 <html lang="hu">
 <head>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/animations.css">
     <meta charset="UTF-8">
     <title>Astrology</title>
 </head>
@@ -22,21 +29,33 @@
 <div id="nav">
     <nav>
         <ul>
-            <li >
-                <a href="planets.html">Bolygók</a>
-            </li>
-            <li>
-                <a href="horoscope.html">Horoszkóp</a>
-            </li>
-            <li class="active-wrapper">
-                <a class="active" href="index.php">Astrology</a>
-            </li>
-            <li>
-                <a href="login.php">Login</a>
-            </li>
-            <li >
-                <a href="register.php">Register</a>
-            </li>
+            <!-- Planets -->
+            <li><a href="planets.php">Bolygók</a></li>
+
+            <!-- Horoscope -->
+            <li><a href="horoscope.php">Horoszkóp</a></li>
+
+            <!-- Astrology -->
+            <li class="active-wrapper"><a class="active" href="index.php">Astrology</a></li>
+
+            <?php if ($isLoggedIn) {
+                echo "
+                <!-- Profile -->
+                <li><a href='profile.php'>Profile</a></li>
+                
+                <!-- Sign out -->
+                <li><a href='../php/logout.php'>Sign Out</a></li>
+                ";
+            } else {
+                echo "
+                <!-- Login -->
+                <li><a href='login.php'>Login</a></li>
+    
+                <!-- Register -->
+                <li><a href='register.php'>Register</a></li>
+                ";
+            } ?>
+
         </ul>
     </nav>
 </div>
@@ -47,35 +66,30 @@
         <div>
             <table>
                 <tr>
-                    <th id="i">
+                    <th id="i"></th>
+                </tr>
 
-                    </th>
-                </tr>
+                <!-- profile_pic -->
                 <tr>
-                    <!-- profile_pic -->
-                    <td headers="i">
-                        <img src="../images/default_profile_picture.png" alt="default">
-                    </td>
+                    <td headers="i"><img src="../images/default_profile_picture.png" alt="default"></td>
                 </tr>
+
+                <!--Username-->
                 <tr>
-                    <td headers="i" style="font-style: italic">
-                        Username
+                    <td headers="i" id="username"><?php if ($isLoggedIn) echo "$_SESSION[username]" ?>
                         <hr>
                     </td>
                 </tr>
 
+                <!-- Planet:-->
                 <tr>
-                    <td headers="i">
-                        <!--                Planet:-->
-                    </td>
+                    <td headers="i"></td>
                 </tr>
 
+                <!--Zodiac sign:-->
                 <tr>
-                    <td headers="i">
-                        <!--                Zodiac sign:-->
-                    </td>
+                    <td headers="i"></td>
                 </tr>
-
             </table>
         </div>
     </aside>
@@ -94,11 +108,15 @@
             jóslásról,
             minden megmagyarázható, logikus és az ok-okozatok összefüggésén alapszik.</p>
 
-        <p>Az aztrológia nem tudja megmondani mi lesz a jövőnk, és mivel a <mark>jövő képlékeny</mark> azt soha senki nem fogja tudni
+        <p>Az aztrológia nem tudja megmondani mi lesz a jövőnk, és mivel a
+            <mark>jövő képlékeny</mark>
+            azt soha senki nem fogja tudni
             biztosra.
-            Amit nyújtani tud, hogy ki tudja következtetni, bizonyos cselekedeteinknek milyen következményei lesznek, vagy
+            Amit nyújtani tud, hogy ki tudja következtetni, bizonyos cselekedeteinknek milyen következményei lesznek,
+            vagy
             éppen bizonyos
-            következményeknek az életünkben milyen okai voltak. Ez arra mutat, hogy mi vagyunk a saját sorsunk kovácsai és
+            következményeknek az életünkben milyen okai voltak. Ez arra mutat, hogy mi vagyunk a saját sorsunk kovácsai
+            és
             mindig tehetünk
             magunkért, másokért és nem valami tőlünk független erő irányít mindent, persze részben erről is szó van.
             Talán ijesztő felelősséget vállalni az életünkért ,talán már gyakorlottak vagyunk benne, de ha nem hisszük
@@ -108,7 +126,8 @@
         <h2>Szimbolika</h2>
         <p>
             A szimbólumok ismerete valójában egy <b>nyelv</b> ,amit tudat alatt mindenki ismer.
-            <i>Az emberek nem tudják nem kifejezni magukat</i> , ha pont semmit nem akarsz magadról sugalni,akkor is sugalsz
+            <i>Az emberek nem tudják nem kifejezni magukat</i> , ha pont semmit nem akarsz magadról sugalni,akkor is
+            sugalsz
             valamit.<br>
 
             Mit is jelent, hogy szimbólum? <br>

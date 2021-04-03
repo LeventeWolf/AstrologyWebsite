@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<?php session_start();
+
+if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
+    $isLoggedIn = true;
+} else {
+    $isLoggedIn = false;
+}
+
+
+?>
+
 <html lang="hu">
 
 <head>
@@ -24,21 +34,34 @@
 <div id="nav">
     <nav>
         <ul>
-            <li class="active-wrapper">
-                <a class="active" href="planets.html">Bolygók</a>
-            </li>
-            <li>
-                <a href="horoscope.html">Horoszkóp</a>
-            </li>
-            <li>
-                <a href="index.php">Astrology</a>
-            </li>
-            <li>
-                <a href="login.php">Login</a>
-            </li>
-            <li>
-                <a href="register.php">Register</a>
-            </li>
+            <!-- Planets -->
+            <li class="active-wrapper"><a class="active" href="planets.php">Bolygók</a></li>
+
+            <!-- Horoscope -->
+            <li><a href="horoscope.php">Horoszkóp</a></li>
+
+            <!-- Astrology -->
+            <li><a href="index.php">Astrology</a></li>
+
+            <?php if ($isLoggedIn) {
+                echo "
+                <!-- Profile -->
+                <li><a href='profile.php'>Profile</a></li>
+                
+                <!-- Log out -->
+                <li><a href='#'>Log out</a></li>
+                ";
+            } else {
+                echo "
+                <!-- Login -->
+                <li><a href='login.php'>Login</a></li>
+    
+                <!-- Register -->
+                <li><a href='register.php'>Register</a></li>
+                ";
+            }
+            ?>
+
         </ul>
     </nav>
 </div>
@@ -55,22 +78,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-style: italic">
-                        Username
+                    <td headers="i" id="username"><?php if ($isLoggedIn) echo "$_SESSION[username]" ?>
                         <hr>
                     </td>
                 </tr>
 
+                <!-- Planet -->
                 <tr>
-                    <td>
-                        <!--                Planet:-->
-                    </td>
+                    <td></td>
                 </tr>
 
+                <!-- Zodiac sign -->
                 <tr>
-                    <td>
-                        <!--                Zodiac sign:-->
-                    </td>
+                    <td></td>
                 </tr>
 
             </table>
