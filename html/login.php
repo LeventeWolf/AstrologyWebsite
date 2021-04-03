@@ -1,4 +1,22 @@
-<?php session_start() ?>
+<?php
+session_start();
+
+include_once '../php/LoginHandler.php';
+
+$loginHandler = new LoginHandler();
+
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+if (isset($_POST["submit"])) {
+    if (!$loginHandler->check_correct_login($username, $password)) {
+        $error_msg = "Invalid username or password!";
+    } else {
+        $_SESSION["username"] = $username;
+        $_SESSION["isLoggedIn"] = true;
+        header("Location: index.php");
+    }
+} ?>
 
 <html lang="en">
 <head>
@@ -56,10 +74,10 @@
                 </tr>
                 <tr>
                     <?php
-                    $username = "Username";
-
-                    if (isset($_SESSION["username"])){
+                    if (isset($_SESSION["isLoggedIn"]) and $_SESSION["isLoggedIn"]) {
                         $username = $_SESSION["username"];
+                    } else {
+                        $username = "Username";
                     }
 
                     echo "
@@ -72,15 +90,17 @@
 
                 </tr>
 
+                <!-- Planet -->
                 <tr>
                     <td>
-                        <!--                Planet:-->
+
                     </td>
                 </tr>
 
+                <!-- Zodiac sign -->
                 <tr>
                     <td>
-                        <!--                Zodiac sign:-->
+
                     </td>
                 </tr>
 
@@ -98,60 +118,36 @@
             <form method="POST" action="login.php">
                 <?php
                 $blink = "";
-                $account = "";
                 $username = "";
                 $password = "";
 
-                if (isset($_SESSION["username"]) and isset($_SESSION["password"])) {
+                if (isset($_SESSION["isRegistered"]) and $_SESSION["isRegistered"]) {
                     $username = $_SESSION["username"];
                     $password = $_SESSION["password"];
-                    $blink = 'blink_me';
+                    $blink = 'blink';
                 }
 
-                echo "
-                    <div class='labels'>
+                //<!--Labels & inputs-->
+                echo "<div class='labels'>
                         <!--Username-->
-                        <label>Felhasználónév:<br> <input type=text name=username required ></label> <br/>
+                        <label>Felhasználónév:<br> 
+                            <input class=$blink type=text name=username required value=$username >
+                        </label> <br/>
         
                         <!--Password-->
-                        <label>Jelszó:<br><input type=password name=password required/></label> <br/>
-                    </div>
-                    ";
+                        <label>Jelszó:<br>
+                            <input class=$blink value=$password type=password name=password required />
+                        </label> <br/>
+                    </div>";
 
+                // <!--Error-box-->
+                if (isset($error_msg)) echo "<div class=error-box>$error_msg</div>"; ?>
 
-                include_once '../php/LoginHandler.php';
+                <!--Login In Button-->
+                <div class='submit-btn'>
+                    <button id='bejelentkezes' type='submit' name='submit'>Bejelentkezés</button>
+                </div>
 
-                $loginHandler = new LoginHandler();
-
-
-                $username = $_POST["username"];
-                $password = $_POST["password"];
-
-                if (isset($_POST["submit"])) {
-                    if (!$loginHandler->check_correct_login($username, $password)) {
-                        echo "<div class=error-box>";
-                        echo "Incorrect username or password!";
-                        echo "</div>";
-                    } else {
-                        session_unset();
-                        echo "sikeres bejelentkezés! $username";
-//                        header("Location: index.php");
-                        $_SESSION["username"] = $username;
-                        $_SESSION["login"] = true;
-                    }
-                }
-
-
-                echo "
-                    <!--Login In Button-->
-                    <div class='submit-btn'>
-                        <button id='bejelentkezes' type='submit' name='submit'>Bejelentkezés</button> 
-                    </div>
-                    
-                    ";
-
-
-                ?>
             </form>
 
         </div>

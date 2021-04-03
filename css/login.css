@@ -86,3 +86,14 @@ form {
     /*border: 2px solid black;*/
     text-align: center;
 }
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.blink {
+    animation: blinker 1.2s ease-out;
+    animation-iteration-count: 2;
+}
