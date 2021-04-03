@@ -31,3 +31,9 @@
 #sidebar table tr:nth-child(1), #sidebar table tr:nth-child(2) {
     text-align: center;
 }
+
+#username {
+    font-size: 22px;
+    font-style: italic;
+    text-align: center;
+}
