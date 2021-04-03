@@ -1,5 +1,33 @@
-<?php session_start();?>
+<?php
+session_start();
 
+if (isset($_POST['submit-btn'])) {
+    $username = $_POST['username'];
+
+    $pwd1 = $_POST['password'];
+    $pwd2 = $_POST['passwordre'];
+
+    include_once '../php/RegistrationHandler.php';
+
+    $registrationHandler = new RegistrationHandler();
+
+    if (!$registrationHandler->is_username_valid($username)) {
+        $error_msg = "This username is already taken!";
+    } elseif (!$registrationHandler->is_passwords_match($pwd1, $pwd2)) {
+        $error_msg = "This username is already taken!";
+    } else {
+        $fileHandler = $registrationHandler->get_fileHandler();
+        $fileHandler->write_user_to_file($username, $pwd1);
+        $fileHandler->create_folder_for_user($username);
+
+        $_SESSION["username"] = $username;
+        $_SESSION["password"] = $pwd1;
+        $_SESSION["isRegistered"] = true;
+        $_SESSION["isLoggedIn"] = false;
+        header("Location: login.php");
+    }
+}
+?>
 
 <html lang="en">
 <head>
@@ -48,12 +76,14 @@
     <aside>
         <div>
             <table>
+                <!-- profile_pic -->
                 <tr>
-                    <!-- profile_pic -->
                     <td>
                         <img src="../images/default_profile_picture.png" alt="default">
                     </td>
                 </tr>
+
+                <!-- username -->
                 <tr>
                     <td style="font-style: italic">
                         Username
@@ -61,15 +91,19 @@
                     </td>
                 </tr>
 
+
+
+                <!-- Planet -->
                 <tr>
                     <td>
-                        <!--                Planet:-->
+
                     </td>
                 </tr>
 
+                <!-- Zodiac sign -->
                 <tr>
                     <td>
-                        <!--                Zodiac sign:-->
+
                     </td>
                 </tr>
 
@@ -84,8 +118,9 @@
         <div class="container">
             <div class="text">Regisztráció</div>
             <form method="POST" action="register.php">
+                <!--Labels & inputs-->
                 <div class="labels">
-                    <label>Felhasználónév:<br> <input type="text" name="username" required ></label> <br/>
+                    <label>Felhasználónév:<br> <input type="text" name="username" required></label> <br/>
 
                     <label>Jelszó:<br> <input type="password" name="password" required/></label> <br/>
 
@@ -146,41 +181,11 @@
                     </comment>
                 </div>
 
+                <!--Error-box-->
+                <?php if (isset($error_msg)) echo "<div class=error-box>$error_msg</div>"; ?>
+
+                <!--Regisztráció-->
                 <input id="regisztracio" type="submit" name="submit-btn" value="Regisztráció"/>
-                <br>
-
-                <!-- HandleRegistration  -->
-                <?php
-                if (isset($_POST['submit-btn'])) {
-                    $username = $_POST['username'];
-
-                    $pwd1 = $_POST['password'];
-                    $pwd2 = $_POST['passwordre'];
-
-                    include_once '../php/RegistrationHandler.php';
-
-                    $registrationHandler = new RegistrationHandler();
-
-                    if (! $registrationHandler->is_username_valid($username)) {
-                        echo "<div class=error-box>";
-                        echo "This username is already taken!";
-                        echo "</div>";
-                    } elseif (! $registrationHandler->is_passwords_match($pwd1, $pwd2)) {
-                        echo "<div class=error-box>";
-                        echo "Passwords don't match!";
-                        echo "</div>";
-                    } else {
-                        $fileHandler = $registrationHandler->get_fileHandler();
-                        $fileHandler->write_user_to_file($username, $pwd1);
-                        $fileHandler->create_folder_for_user($username);
-
-
-                        $_SESSION["username"] = $username;
-                        $_SESSION["password"] = $pwd1;
-                    }
-                }
-                ?>
-                <!-- HandleRegistration END  -->
 
             </form>
         </div>

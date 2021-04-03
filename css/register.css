@@ -83,3 +83,10 @@ form {
     border-radius: 22px;
     width: 100%;
 }
+
+.error-box {
+    color: red;
+    font-style: italic;
+    /*border: 2px solid black;*/
+    text-align: center;
+}
