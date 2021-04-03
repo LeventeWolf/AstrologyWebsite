@@ -48,8 +48,8 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
                 <!-- Profile -->
                 <li><a href='profile.php'>Profile</a></li>
                 
-                <!-- Log out -->
-                <li><a href='#'>Log out</a></li>
+                <!-- Sign out -->
+                <li><a href='../php/logout.php'>Sign Out</a></li>
                 ";
             } else {
                 echo "
