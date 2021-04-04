@@ -6,6 +6,7 @@ if (isset($_POST['submit-btn'])) {
 
     $pwd1 = $_POST['password'];
     $pwd2 = $_POST['passwordre'];
+    $email = $_POST['email'];
 
     include_once '../php/RegistrationHandler.php';
 
@@ -15,9 +16,11 @@ if (isset($_POST['submit-btn'])) {
         $error_msg = "This username is already taken!";
     } elseif (!$registrationHandler->is_passwords_match($pwd1, $pwd2)) {
         $error_msg = "Passwords don't match!";
+    } elseif (!$registrationHandler->is_email_valid($email)){
+        $error_msg = "Invalid email!";
     } else {
         $fileHandler = $registrationHandler->get_fileHandler();
-        $fileHandler->write_user_to_file($username, $pwd1);
+        $fileHandler->write_user_to_file($username, $pwd1, $email);
         $fileHandler->create_folder_for_user($username);
 
         $_SESSION["username"] = $username;
@@ -115,10 +118,10 @@ if (isset($_POST['submit-btn'])) {
 
                     <label>Jelszó ismét:<br> <input type="password" name="passwordre" required/></label> <br/>
 
+
+                    <label>E-mail: <input type="email" name="email" required/></label> <br/>
+
                     <comment>
-                        <!--                <label>E-mail: <input type="email" name="email" required/></label> <br/>-->
-                        <!---->
-                        <!---->
                         <!--mezőcsoportosítás-->
                         <!--                <fieldset>-->
                         <!--mezőcsoportosítás felirata-->
