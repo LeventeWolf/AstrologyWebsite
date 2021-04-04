@@ -53,4 +53,17 @@ class RegistrationHandler extends Handler
             return false;
         }
     }
+
+    /**
+     * @param string $password
+     * @return bool <b>is_password_length_valid</b> returns true if the <i>password</i>
+     * length is equal or greater then 8 characters, false if it does not
+     */
+    public function is_password_length_valid(string $password) : bool
+    {
+        if (strlen($password) >= 8)
+            return true;
+
+        return false;
+    }
 }

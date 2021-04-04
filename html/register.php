@@ -3,7 +3,6 @@ session_start();
 
 if (isset($_POST['submit-btn'])) {
     $username = $_POST['username'];
-
     $pwd1 = $_POST['password'];
     $pwd2 = $_POST['passwordre'];
     $email = $_POST['email'];
@@ -14,9 +13,11 @@ if (isset($_POST['submit-btn'])) {
 
     if (!$registrationHandler->is_username_valid($username)) {
         $error_msg = "This username is already taken!";
+    } elseif (!$registrationHandler->is_password_length_valid($pwd1)) {
+        $error_msg = "Password must be minimum 8 character long";
     } elseif (!$registrationHandler->is_passwords_match($pwd1, $pwd2)) {
         $error_msg = "Passwords don't match!";
-    } elseif (!$registrationHandler->is_email_valid($email)){
+    } elseif (!$registrationHandler->is_email_valid($email)) {
         $error_msg = "Invalid email!";
     } else {
         $fileHandler = $registrationHandler->get_fileHandler();
@@ -86,7 +87,9 @@ if (isset($_POST['submit-btn'])) {
 
                 <!-- username -->
                 <tr>
-                    <td><hr></td>
+                    <td>
+                        <hr>
+                    </td>
                 </tr>
 
                 <!-- Planet -->
