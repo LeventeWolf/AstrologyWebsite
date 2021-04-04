@@ -46,28 +46,4 @@ class RegistrationHandler extends Handler
             return false;
         }
     }
-
-    /**
-     * Returns with the current username in the $_SESSION associative array
-     * Returns "" if the username is not set
-     * @return mixed|string
-     */
-    public function get_registered_username(): string
-    {
-        if (!isset($_SESSION["username"])) return "";
-
-        return $_SESSION["username"];
-    }
-
-    /**
-     * Returns with the current password in the $_SESSION associative array
-     *  Returns "" if the password is not set
-     * @return string
-     */
-    public function get_registered_password(): string
-    {
-        if (!isset($_SESSION["password"])) return "";
-
-        return $_SESSION["password"];
-    }
 }
