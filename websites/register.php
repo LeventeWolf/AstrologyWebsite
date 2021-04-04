@@ -2,6 +2,19 @@
 session_start();
 
 if (isset($_POST['submit-btn'])) {
+
+    if (!isset($_POST["username"]) || trim($_POST["username"]) === "")
+        $error_msg = "You must have a username!";
+
+    if (!isset($_POST["password"]) || trim($_POST["password"]) === "" ||
+            !isset($_POST["passwordre"]) || trim($_POST["passwordre"]) === "")
+        $error_msg = "You must have a password with passoword checker!";
+
+    if (!isset($_POST["email"]) || trim($_POST["email"]) === "")
+        $error_msg = "You must have an email!";
+
+
+
     $username = $_POST['username'];
     $pwd1 = $_POST['password'];
     $pwd2 = $_POST['passwordre'];
@@ -11,25 +24,28 @@ if (isset($_POST['submit-btn'])) {
 
     $registrationHandler = new RegistrationHandler();
 
-    if (!$registrationHandler->is_username_valid($username)) {
-        $error_msg = "This username is already taken!";
-    } elseif (!$registrationHandler->is_password_length_valid($pwd1)) {
-        $error_msg = "Password must be minimum 8 character long";
-    } elseif (!$registrationHandler->is_passwords_match($pwd1, $pwd2)) {
-        $error_msg = "Passwords don't match!";
-    } elseif (!$registrationHandler->is_email_valid($email)) {
-        $error_msg = "Invalid email!";
-    } else {
-        $fileHandler = $registrationHandler->get_fileHandler();
-        $fileHandler->write_user_to_file($username, $pwd1, $email);
-        $fileHandler->create_folder_for_user($username);
+    if (!isset($error_msg)){
+        if (!$registrationHandler->is_username_valid($username)) {
+            $error_msg = "This username is already taken!";
+        } elseif (!$registrationHandler->is_password_length_valid($pwd1)) {
+            $error_msg = "Password must be minimum 8 character long";
+        } elseif (!$registrationHandler->is_passwords_match($pwd1, $pwd2)) {
+            $error_msg = "Passwords don't match!";
+        } elseif (!$registrationHandler->is_email_valid($email)) {
+            $error_msg = "Invalid email!";
+        } else {
+            $fileHandler = $registrationHandler->get_fileHandler();
+            $fileHandler->write_user_to_file($username, $pwd1, $email);
+            $fileHandler->create_folder_for_user($username);
 
-        $_SESSION["username"] = $username;
-        $_SESSION["password"] = $pwd1;
-        $_SESSION["isRegistered"] = true;
-        $_SESSION["isLoggedIn"] = false;
-        header("Location: login.php");
+            $_SESSION["username"] = $username;
+            $_SESSION["password"] = $pwd1;
+            $_SESSION["isRegistered"] = true;
+            $_SESSION["isLoggedIn"] = false;
+            header("Location: login.php");
+        }
     }
+
 }
 ?>
 
@@ -115,7 +131,7 @@ if (isset($_POST['submit-btn'])) {
             <form method="POST" action="register.php">
                 <!--Labels & inputs-->
                 <div class="labels">
-                    <label>Felhasználónév:<br> <input type="text" name="username" required></label> <br/>
+                    <label>Felhasználónév:<br> <input type="text" name="username"></label> <br/>
 
                     <label>Jelszó:<br> <input type="password" name="password" required/></label> <br/>
 
