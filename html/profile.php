@@ -1,10 +1,20 @@
 <?php session_start();
 
+$isLoggedIn = false;
+
 if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
     $isLoggedIn = true;
-} else {
-    $isLoggedIn = false;
 }
+
+if ($isLoggedIn){
+    include_once '../php/AccountHandler.php';
+
+    $username = $_SESSION["username"];
+    $accountHandler = new AccountHandler();
+    $email = $accountHandler->get_email($username);
+}
+
+
 ?>
 
 <html lang="hu">
@@ -101,6 +111,8 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
         <h1>Profile Info</h1>
         <div id="settings">
             <h2>Change profile picture</h2>
+            <h2>Email:</h2>
+            <?php if ($isLoggedIn) echo "<div class='email'> $email </div> "; ?>
         </div>
     </main>
 </div>
