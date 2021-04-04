@@ -12,18 +12,26 @@ class FileHandler
 
         // kiíratás fájlba (serialize)
         $file = fopen("../userdata/accounts.txt", "a+");
+        if ($file === FALSE) die("HIBA: A fájl megnyitása nem sikerült!");
+
         foreach ($accounts as $account)
             fwrite($file, serialize($account) . "\n");
         fclose($file);
     }
 
     /* write user to file (serialize) */
-    public function write_user_to_file(string $username, string $password)
+    public function write_user_to_file(string $username, string $password, string $date)
     {
-        $account = ["username" => "$username", "password" => "$password"];
+        $account = [
+            "username" => "$username",
+            "password" => "$password",
+            "date" => "$date"
+        ];
 
         // kiíratás fájlba (serialize)
         $file = fopen("../userdata/accounts.txt", "a+");
+        if ($file === FALSE) die("HIBA: A fájl megnyitása nem sikerült!");
+
         fwrite($file, serialize($account) . "\n");
         fclose($file);
     }
@@ -33,6 +41,8 @@ class FileHandler
     {
         // beolvasás fájlból (unserialize)
         $file = fopen("../userdata/accounts.txt", "r");
+        if ($file === FALSE) die("HIBA: A fájl megnyitása nem sikerült!");
+
         $accounts = [];
         while (($line = fgets($file)) !== false)
             $accounts[] = unserialize($line);
