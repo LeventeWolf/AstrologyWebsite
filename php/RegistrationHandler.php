@@ -36,11 +36,18 @@ class RegistrationHandler extends Handler
         return true;
     }
 
+    /**
+     * Check if email is valid with regex
+     * @param string $email
+     * @return bool <b>is_email_valid</b> returns 1 if the <i>email</i> is valid, 0 if it does not
+     */
     public function is_email_valid(string $email) : bool
     {
-        $pattern = "/@/";
+        $pattern = "/^[a-zA-Z]+[a-zA-Z0-9\.-]*@[a-zA-Z]{2,}\.[a-z]{2,4}$/";
 
-        if (preg_match($pattern, $email)){
+        //  preg_match($pattern, $subject) Returns 1 if the pattern was found in the string and 0 if not
+        //  error_reporting(0);
+        if (preg_match($pattern, $email) == 1){
             return true;
         } else {
             return false;
