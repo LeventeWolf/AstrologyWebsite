@@ -14,7 +14,7 @@ if (isset($_POST['submit-btn'])) {
     if (!$registrationHandler->is_username_valid($username)) {
         $error_msg = "This username is already taken!";
     } elseif (!$registrationHandler->is_passwords_match($pwd1, $pwd2)) {
-        $error_msg = "This username is already taken!";
+        $error_msg = "Passwords don't match!";
     } else {
         $fileHandler = $registrationHandler->get_fileHandler();
         $fileHandler->write_user_to_file($username, $pwd1);
