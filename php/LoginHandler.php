@@ -1,38 +1,10 @@
 <?php
 
 
-include_once 'FileHandler.php';
+include_once 'Handler.php';
 
-class LoginHandler
+class LoginHandler extends Handler
 {
-    private $fileHandler;
-    private $accounts;
-
-    function __construct()
-    {
-        $this->init();
-    }
-
-    public function init()
-    {
-        $this->set_fileHandler();
-        $this->set_accounts();
-    }
-
-    private function set_fileHandler()
-    {
-        $this->fileHandler = new FileHandler;
-    }
-
-    private function set_accounts()
-    {
-        $this->accounts = $this->fileHandler->read_accounts_from_file();
-    }
-
-    public function get_fileHandler()
-    {
-        return $this->fileHandler;
-    }
 
     function check_correct_login(string $username, string $pwd): int
     {

@@ -1,37 +1,8 @@
 <?php
-include_once 'FileHandler.php';
+include_once 'Handler.php';
 
-class RegistrationHandler
+class RegistrationHandler extends Handler
 {
-    private $fileHandler;
-    private $accounts;
-
-    function __construct()
-    {
-        $this->init();
-    }
-
-    public function init()
-    {
-        $this->set_fileHandler();
-        $this->set_accounts();
-    }
-
-    private function set_fileHandler()
-    {
-        $this->fileHandler = new FileHandler;
-    }
-
-    private function set_accounts()
-    {
-        $this->accounts = $this->fileHandler->read_accounts_from_file();
-    }
-
-    public function get_fileHandler()
-    {
-        return $this->fileHandler;
-    }
-
     /**
      * Returns 1 if the username is unique else 0
      * @param string $username
@@ -49,20 +20,31 @@ class RegistrationHandler
     }
 
     /**
-     * Compare two given passwords equals: 0, not equals: 1
+     * Compare two given passwords if equals return true else false
      * Returns 1 if the two given passwords are the same
      * Returns 0 if the two given passwords are not the same
      * @param string $pwd1
      * @param string $pwd2
      * @return int
      */
-    public function is_passwords_match(string $pwd1, string $pwd2): int
+    public function is_passwords_match(string $pwd1, string $pwd2): bool
     {
         if (strcmp($pwd1, $pwd2) !== 0) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
+    }
+
+    public function is_email_valid(string $email) : bool
+    {
+        $pattern = "/@/";
+
+        if (preg_match($pattern, $email)){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

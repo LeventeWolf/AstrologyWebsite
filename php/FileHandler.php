@@ -20,12 +20,12 @@ class FileHandler
     }
 
     /* write user to file (serialize) */
-    public function write_user_to_file(string $username, string $password, string $date)
+    public function write_user_to_file(string $username, string $password, string $email)
     {
         $account = [
             "username" => "$username",
             "password" => "$password",
-            "date" => "$date"
+            "email" => "$email"
         ];
 
         // kiíratás fájlba (serialize)
