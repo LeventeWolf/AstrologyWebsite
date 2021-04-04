@@ -3,16 +3,15 @@ session_start();
 
 if (isset($_POST['submit-btn'])) {
 
-    if (!isset($_POST["username"]) || trim($_POST["username"]) === "")
-        $error_msg = "You must have a username!";
-
-    if (!isset($_POST["password"]) || trim($_POST["password"]) === "" ||
-            !isset($_POST["passwordre"]) || trim($_POST["passwordre"]) === "")
-        $error_msg = "You must have a password with passoword checker!";
-
     if (!isset($_POST["email"]) || trim($_POST["email"]) === "")
         $error_msg = "You must have an email!";
 
+    if (!isset($_POST["password"]) || trim($_POST["password"]) === "" ||
+        !isset($_POST["passwordre"]) || trim($_POST["passwordre"]) === "")
+        $error_msg = "You must have a password with passoword checker!";
+
+    if (!isset($_POST["username"]) || trim($_POST["username"]) === "")
+        $error_msg = "You must have a username!";
 
 
     $username = $_POST['username'];
@@ -131,14 +130,14 @@ if (isset($_POST['submit-btn'])) {
             <form method="POST" action="register.php">
                 <!--Labels & inputs-->
                 <div class="labels">
-                    <label>Felhasználónév:<br> <input type="text" name="username"></label> <br/>
+                    <label>Felhasználónév:<br> <input type="text" name="username" ></label> <br/>
 
-                    <label>Jelszó:<br> <input type="password" name="password" required/></label> <br/>
+                    <label>Jelszó:<br> <input type="password" name="password" /></label> <br/>
 
-                    <label>Jelszó ismét:<br> <input type="password" name="passwordre" required/></label> <br/>
+                    <label>Jelszó ismét:<br> <input type="password" name="passwordre" /></label> <br/>
 
 
-                    <label>E-mail: <input type="email" name="email" required/></label> <br/>
+                    <label>E-mail: <input type="email" name="email" /></label> <br/>
 
                     <comment>
                         <!--mezőcsoportosítás-->
