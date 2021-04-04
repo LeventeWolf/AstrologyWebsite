@@ -90,6 +90,8 @@
 
                 <label>Jelszó ismét: <input type="password" name="passwordre" required/></label> <br/>
 
+                <label>Profilkép feltöltés: <input type="file" name="file_upload"  /></label>
+
                 <comment>
                     <!--                <label>E-mail: <input type="email" name="email" required/></label> <br/>-->
                     <!---->
@@ -155,6 +157,8 @@
                     $pwd1 = $_POST['password'];
                     $pwd2 = $_POST['passwordre'];
 
+                    $filename = $_POST['file_upload'];
+
                     include_once '../php/RegistrationHandler.php';
 
                     $registrationHandler = new RegistrationHandler();
@@ -166,11 +170,17 @@
                     } elseif (! $registrationHandler->is_passwords_match($pwd1, $pwd2)) {
                         echo "<div class=error-box>";
                         echo "Passwords don't match!";
+                        echo "</div>";}
+                    elseif (! $registrationHandler->is_filetype_valid($filename)) {
+                        echo "<div class=error-box>";
+                        echo "This filetype does not allowed! Try .png .img extensions!";
                         echo "</div>";
+
                     } else {
                         $fileHandler = $registrationHandler->get_fileHandler();
                         $fileHandler->write_user_to_file($username, $pwd1);
                         $fileHandler->create_folder_for_user($username);
+                        $fileHandler->set_profil_picture($filename);
 
 
                         $_SESSION["username"] = $username;

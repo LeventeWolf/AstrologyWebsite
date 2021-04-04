@@ -7,7 +7,7 @@ class FileHandler
     {
         $accounts = [
             ["username" => "admin", "password" => "admin"],
-            ["username" => "guest", "password" => "guest"]
+            ["username" => "guest", "password" => "guest"] //todo itt miert van ket tomb?(nem kotekedes csak nem ertem)
         ];
 
         // kiíratás fájlba (serialize)
@@ -52,6 +52,12 @@ class FileHandler
         mkdir("../userdata/users/" . "$username");
 
         $this->create_profile_pictures_folder($username);
+    }
+
+    public  function  set_profile_picture(string $filename) {
+
+
+
     }
 
     private function create_profile_pictures_folder(string $username)

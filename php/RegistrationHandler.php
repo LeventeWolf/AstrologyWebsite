@@ -45,6 +45,15 @@
 
             return 1;
         }
+        public function is_filetype_valid(string $filename): int
+        {
+            /** inarray string szerepel e tomb ben
+             * explore . menten szeparal
+             */
+            if (in_array( explode(".", $filename)[-1],["png","jpg"] )) return 0;
+
+            return 1;
+        }
 
         public function get_registered_username(){
             if (isset($_SESSION["username"]))

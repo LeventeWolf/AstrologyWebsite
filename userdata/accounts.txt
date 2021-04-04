@@ -1,1 +1,4 @@
 a:2:{s:8:"username";s:5:"admin";s:8:"password";s:5:"admin";}
+a:2:{s:8:"username";s:4:"adam";s:8:"password";s:4:"adam";}
+a:2:{s:8:"username";s:1:"e";s:8:"password";s:1:"e";}
+a:2:{s:8:"username";s:2:"ed";s:8:"password";s:2:"ed";}
