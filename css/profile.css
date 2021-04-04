@@ -5,3 +5,7 @@ body {
 #main {
     background-image: linear-gradient(rgba(7, 4, 59, 0.96), rgba(24, 21, 84, 0.4));
 }
+
+#main h1, #main h2, #main p {
+    animation: none;
+}

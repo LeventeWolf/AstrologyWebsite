@@ -20,8 +20,8 @@ if ($isLoggedIn){
 <html lang="hu">
 <head>
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/sidebar.css">
     <meta charset="UTF-8">
     <title>Profile</title>
@@ -46,12 +46,12 @@ if ($isLoggedIn){
             <li><a href="horoscope.php">Horoszkóp</a></li>
 
             <!-- Astrology -->
-            <li class="active-wrapper"><a class="active" href="index.php">Astrology</a></li>
+            <li><a href="index.php">Astrology</a></li>
 
             <?php if ($isLoggedIn) {
                 echo "
                 <!-- Profile -->
-                <li><a href='profile.php'>Profile</a></li>
+                <li class='active-wrapper'><a class='active' href='profile.php'>Profile</a></li>
                 
                 <!-- Sign out -->
                 <li><a href='../php/logout.php'>Sign Out</a></li>
