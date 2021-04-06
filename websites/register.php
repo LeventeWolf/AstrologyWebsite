@@ -41,6 +41,9 @@ if (isset($_POST['submit-btn'])) {
             $_SESSION["password"] = $pwd1;
             $_SESSION["isRegistered"] = true;
             $_SESSION["isLoggedIn"] = false;
+
+            $_COOKIE[$username] = 0;
+
             header("Location: login.php");
         }
     }

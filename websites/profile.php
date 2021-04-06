@@ -1,20 +1,16 @@
 <?php session_start();
 
-$isLoggedIn = false;
-
 if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
     $isLoggedIn = true;
 } else {
     header('Location: login.php');
 }
 
-if ($isLoggedIn){
-    include_once '../php/AccountHandler.php';
+include_once '../php/AccountHandler.php';
+$accountHandler = new AccountHandler();
 
-    $username = $_SESSION["username"];
-    $accountHandler = new AccountHandler();
-    $email = $accountHandler->get_email($username);
-}
+$username = $_SESSION["username"];
+$email = $accountHandler->get_email($username);
 
 
 ?>
@@ -114,7 +110,10 @@ if ($isLoggedIn){
         <div id="settings">
             <h2>Change profile picture</h2>
             <h2>Email:</h2>
-            <?php if ($isLoggedIn) echo "<div class='email'> $email </div> "; ?>
+            <?php echo "<div class='email'> $email </div> "; ?>
+            <h2>Number of Visits:</h2>
+            <?php echo "<div class='visits'> $_COOKIE[$username] </div> "; ?>
+
         </div>
     </main>
 </div>

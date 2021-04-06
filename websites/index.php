@@ -1,10 +1,18 @@
 <?php session_start();
 
+
 if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
     $isLoggedIn = true;
+    $username = $_SESSION['username'];
+
+    if (isset($_COOKIE[$username]))
+        setcookie($username, $_COOKIE[$username] + 1, time() + (60*60*24*30), "/"); // 30 nap
+
 } else {
     $isLoggedIn = false;
 }
+
+
 ?>
 
 <html lang="hu">
