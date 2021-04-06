@@ -4,6 +4,8 @@ $isLoggedIn = false;
 
 if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
     $isLoggedIn = true;
+} else {
+    header('Location: login.php');
 }
 
 if ($isLoggedIn){
