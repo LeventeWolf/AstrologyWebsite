@@ -2,23 +2,6 @@
 
 class FileHandler
 {
-    /* writes admin & guest to accounts.txt (serialize) */
-    public function write_default_users_to_file()
-    {
-        $accounts = [
-            ["username" => "admin", "password" => "admin"],
-            ["username" => "guest", "password" => "guest"]
-        ];
-
-        // kiíratás fájlba (serialize)
-        $file = fopen("../userdata/accounts.txt", "a+");
-        if ($file === FALSE) die("HIBA: A fájl megnyitása nem sikerült!");
-
-        foreach ($accounts as $account)
-            fwrite($file, serialize($account) . "\n");
-        fclose($file);
-    }
-
     /* write user to file (serialize) */
     public function write_user_to_file(string $username, string $password, string $email)
     {
