@@ -1,5 +1,13 @@
 <?php session_start();
 
+if (isset($_SESSION['username'])) {
+            return true;
+    header('Location: login.php');
+}
+
+
+
+
 if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
     $isLoggedIn = true;
 } else {
@@ -111,7 +119,7 @@ $email = $accountHandler->get_email($username);
             <h2>Change profile picture</h2>
             <h2>Email:</h2>
             <?php echo "<div class='email'> $email </div> "; ?>
-            <h2>Number of Visits:</h2>
+            <h2>Number of Visits: (on your computer lmao)</h2>
             <?php echo "<div class='visits'> $_COOKIE[$username] </div> "; ?>
 
         </div>

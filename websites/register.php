@@ -37,6 +37,8 @@ if (isset($_POST['submit-btn'])) {
             $fileHandler->write_user_to_file($username, $pwd1, $email);
             $fileHandler->create_folder_for_user($username);
 
+
+
             $_SESSION["username"] = $username;
             $_SESSION["password"] = $pwd1;
             $_SESSION["isRegistered"] = true;
