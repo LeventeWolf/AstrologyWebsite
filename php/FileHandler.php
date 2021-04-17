@@ -18,6 +18,22 @@ class FileHandler
         fwrite($file, serialize($account) . "\n");
         fclose($file);
     }
+    public function take_pic_to_folder(string $pic,string $account)
+    {
+        // összeállítjuk a cél útvonalat: ez most az images/<fájl neve> útvonal lesz
+        $cel_utvonal = "../userdata/users/$account/profile_pictures" . $pic;
+
+        // megpróbáljuk átmozgatni a fájlt a cél útvonalra (az azonos nevű fájlt ekkor felülírjuk!)
+        if (move_uploaded_file($_FILES["profile-pic"]["tmp_name"], $cel_utvonal)) {
+            echo "A fájl sikeresen átmozgatásra került!";
+        } else {
+            echo "Hiba történt a fájl átmozgatása során!";
+        }
+
+    }
+
+
+
 
     /* return with $accounts which stores all the accounts */
     public function read_accounts_from_file()
