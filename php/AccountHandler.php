@@ -20,5 +20,19 @@ class AccountHandler extends Handler
         return "error";
     }
 
+    public function is_picture_valid(string $picture): int
+    {
+        $file_parts = pathinfo($picture);
+
+        switch ($file_parts['extension']) {
+            case "png":
+            case "jpg":
+                return 1;
+
+        }
+
+        return 0;
+    }
+
 
 }
