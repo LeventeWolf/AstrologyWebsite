@@ -26,7 +26,7 @@ if (isset($_POST['submit-btn'])) {
         } else {
             $fileHandler = $accHand->get_fileHandler();
             $fileHandler->write_user_to_file($pic,$username);
-;
+
 
         }
     }
