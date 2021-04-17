@@ -68,6 +68,7 @@ class FileHandler
         mkdir("../userdata/users/" . "$username" . "/profile_pictures");
     }
 
+
     public static function is_profile_picture_exists($username){
         return file_exists("../userdata/users/".$username."/profile_pictures/active.png");
     }

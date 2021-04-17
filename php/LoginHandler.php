@@ -16,12 +16,4 @@ class LoginHandler extends Handler
 
         return 0;
     }
-
-    public static function check_if_logged_in(){
-        if (isset($_SESSION['username'])) {
-            return true;
-        }
-
-        return false;
-    }
 }
