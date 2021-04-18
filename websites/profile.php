@@ -18,7 +18,8 @@ $fileUploadHandler->upload();
 include_once '../php/AccountHandler.php';
 $accHand = new AccountHandler();
 
-$username = $_SESSION["username"];
+$username = unserialize($_SESSION["account"])["username"];
+$date = unserialize($_SESSION["account"])["date"];
 $email = $accHand->get_email($username);
 
 ?>
@@ -140,6 +141,8 @@ $email = $accHand->get_email($username);
                 <input type='file' name='image' accept="image/*"/>
                 <input type='submit' name='upload-btn' value='Upload'/>
             </form>
+            <h2>Login Date</h2>
+            <?php echo "<div class='visits'> $date </div> "; ?>
 
         </div>
     </main>
