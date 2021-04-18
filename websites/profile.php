@@ -21,9 +21,8 @@ $accHand = new AccountHandler();
 $username = unserialize($_SESSION["account"])["username"];
 $date = unserialize($_SESSION["account"])["date"];
 $email = $accHand->get_email($username);
-
 ?>
-
+<!DOCTYPE html>
 <html lang="hu">
 <head>
     <link rel="stylesheet" href="../css/base.css">

@@ -11,9 +11,8 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
 } else {
     $isLoggedIn = false;
 }
-
 ?>
-
+<!DOCTYPE html>
 <html lang="hu">
 <head>
     <link rel="stylesheet" href="../css/base.css">

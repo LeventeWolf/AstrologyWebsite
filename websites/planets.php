@@ -6,9 +6,8 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
     $isLoggedIn = false;
 }
 
-
 ?>
-
+<!DOCTYPE html>
 <html lang="hu">
 
 <head>
