@@ -63,10 +63,9 @@ if (isset($_POST['submit-btn'])) {
 
         header("Location: login.php");
     }
-
 }
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

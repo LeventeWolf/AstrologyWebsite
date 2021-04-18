@@ -15,10 +15,9 @@ if (isset($_POST["submit"])){
         $_SESSION["username"] = $username;
         $_SESSION["isLoggedIn"] = true;
         header("Location: index.php");
-    }
-}
+    }}
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

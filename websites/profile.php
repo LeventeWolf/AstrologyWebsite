@@ -20,9 +20,8 @@ $accHand = new AccountHandler();
 
 $username = $_SESSION["username"];
 $email = $accHand->get_email($username);
-
 ?>
-
+<!DOCTYPE html>
 <html lang="hu">
 <head>
     <link rel="stylesheet" href="../css/base.css">
