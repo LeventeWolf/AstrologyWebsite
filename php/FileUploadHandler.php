@@ -100,7 +100,7 @@ class FileUploadHandler
      */
     function store_file()
     {
-        $username = $_SESSION['username'];
+        $username = unserialize($_SESSION['account'])["username"];
         // útvonal (a fájl az images mappába kerül az eredeti fájlnévvel)
         $dest_copy = "../userdata/users/" . $username . "/profile_pictures/" . $_FILES["image"]["name"];
         $dest_active = "../userdata/users/" . $username . "/profile_pictures/" . "active.png";
