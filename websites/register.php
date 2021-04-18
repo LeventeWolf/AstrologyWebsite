@@ -1,51 +1,63 @@
 <?php
 session_start();
+include_once '../php/RegistrationHandler.php';
+
+$registrationHandler = new RegistrationHandler();
 
 if (isset($_POST['submit-btn'])) {
-
-    if (!isset($_POST["email"]) || trim($_POST["email"]) === "")
-        $error_msg = "You must have an email!";
-
-    if (!isset($_POST["password"]) || trim($_POST["password"]) === "" ||
-        !isset($_POST["passwordre"]) || trim($_POST["passwordre"]) === "")
-        $error_msg = "You must have a password with passoword checker!";
-
-    if (!isset($_POST["username"]) || trim($_POST["username"]) === "")
-        $error_msg = "You must have a username!";
-
-
     $username = $_POST['username'];
     $pwd1 = $_POST['password'];
     $pwd2 = $_POST['passwordre'];
     $email = $_POST['email'];
+    $aszf = $_POST["aszf"];
 
-    include_once '../php/RegistrationHandler.php';
+    if (!isset($aszf)) {
+        $error_msg = "You must accept terms and conditions!";
+    }
 
-    $registrationHandler = new RegistrationHandler();
+    if (!isset($email) || trim($email) === "")
+        $error_msg = "You must have an email!";
 
+    if (!isset($pwd1) || trim($pwd1) === "" || !isset($pwd2) || trim($pwd2) === "")
+        $error_msg = "You must have a password with passoword checker!";
+
+    if (!isset($username) || trim($username) === "")
+        $error_msg = "You must have a username!";
+
+    if (!$registrationHandler->is_username_valid($username)) {
+        $error_msg = "This username is already taken!";
+    }
+
+    if (!$registrationHandler->is_password_length_valid($pwd1)) {
+        $error_msg = "Password must be minimum 8 character long";
+    }
+
+    if (!$registrationHandler->is_passwords_match($pwd1, $pwd2)) {
+        $error_msg = "Passwords don't match!";
+    }
+
+    if (!$registrationHandler->is_email_valid($email)) {
+        $error_msg = "Invalid email!";
+    }
+
+
+    //Ha sikeres a regisztráció
     if (!isset($error_msg)){
-        if (!$registrationHandler->is_username_valid($username)) {
-            $error_msg = "This username is already taken!";
-        } elseif (!$registrationHandler->is_password_length_valid($pwd1)) {
-            $error_msg = "Password must be minimum 8 character long";
-        } elseif (!$registrationHandler->is_passwords_match($pwd1, $pwd2)) {
-            $error_msg = "Passwords don't match!";
-        } elseif (!$registrationHandler->is_email_valid($email)) {
-            $error_msg = "Invalid email!";
-        } else {
-            $fileHandler = $registrationHandler->get_fileHandler();
-            $fileHandler->write_user_to_file($username, $pwd1, $email);
-            $fileHandler->create_folder_for_user($username);
+        $fileHandler = $registrationHandler->get_fileHandler();
+        $fileHandler->write_user_to_file($username, $pwd1, $email);
+//        $fileHandler->create_folder_for_user($username);
+        $fileHandler->create_default_profile_pic();
 
-            $_SESSION["username"] = $username;
-            $_SESSION["password"] = $pwd1;
-            $_SESSION["isRegistered"] = true;
-            $_SESSION["isLoggedIn"] = false;
 
-            $_COOKIE[$username] = 0;
+        $_SESSION["username"] = $username;
+        $_SESSION["password"] = $pwd1;
+        $_SESSION["isRegistered"] = true;
+        $_SESSION["isLoggedIn"] = false;
 
-            header("Location: login.php");
-        }
+
+        $_COOKIE[$username] = 0;
+
+        header("Location: login.php");
     }
 
 }
@@ -142,6 +154,8 @@ if (isset($_POST['submit-btn'])) {
 
                     <label>E-mail: <input type="email" name="email" /></label> <br/>
 
+
+
                     <comment>
                         <!--mezőcsoportosítás-->
                         <!--                <fieldset>-->
@@ -187,12 +201,16 @@ if (isset($_POST['submit-btn'])) {
                         <!---->
                         <!--                <input type="hidden"/> <br>-->
                         <!---->
-                        <!--                Általános szerződési feltételek elfogadása:-->
-                        <!--                <input  type="checkbox"> <br>-->
                         <!---->
                         <!--                <input type="reset" name="reset-btn" value="Adatok törlése"/>-->
+
                     </comment>
                 </div>
+
+
+                <label id="aszf">Általános-szerződési-feltételek-elfogadása: <input type="checkbox" name="aszf"> </label>
+
+
 
                 <!--Error-box-->
                 <?php if (isset($error_msg)) echo "<div class=error-box>$error_msg</div>"; ?>
