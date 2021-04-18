@@ -4,25 +4,15 @@ include_once '../php/RegistrationHandler.php';
 
 $registrationHandler = new RegistrationHandler();
 
+error_reporting(0);
+
 if (isset($_POST['submit-btn'])) {
+
     $username = $_POST['username'];
     $pwd1 = $_POST['password'];
     $pwd2 = $_POST['passwordre'];
     $email = $_POST['email'];
     $aszf = $_POST["aszf"];
-
-    if (!isset($aszf)) {
-        $error_msg = "You must accept terms and conditions!";
-    }
-
-    if (!isset($email) || trim($email) === "")
-        $error_msg = "You must have an email!";
-
-    if (!isset($pwd1) || trim($pwd1) === "" || !isset($pwd2) || trim($pwd2) === "")
-        $error_msg = "You must have a password with passoword checker!";
-
-    if (!isset($username) || trim($username) === "")
-        $error_msg = "You must have a username!";
 
     if (!$registrationHandler->is_username_valid($username)) {
         $error_msg = "This username is already taken!";
@@ -39,6 +29,21 @@ if (isset($_POST['submit-btn'])) {
     if (!$registrationHandler->is_email_valid($email)) {
         $error_msg = "Invalid email!";
     }
+
+    if (!isset($aszf)) {
+        $error_msg = "You must accept terms and conditions!";
+    }
+
+    if (!isset($email) || trim($email) === "")
+        $error_msg = "You must have an email!";
+
+    if (!isset($pwd1) || trim($pwd1) === "" || !isset($pwd2) || trim($pwd2) === "")
+        $error_msg = "You must have a password with passoword checker!";
+
+    if (!isset($username) || trim($username) === "")
+        $error_msg = "You must have a username!";
+
+
 
 
     //Ha sikeres a regisztráció
