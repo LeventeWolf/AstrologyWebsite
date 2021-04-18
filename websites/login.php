@@ -12,7 +12,12 @@ if (isset($_POST["submit"])){
     if (!$loginHandler->check_correct_login($username, $password)) {
         $error_msg = "Invalid username or password!";
     } else {
-        $_SESSION["username"] = $username;
+        $account = [
+            "username" => $username,
+            "date" => date("Y.m.d"),
+        ];
+
+        $_SESSION["account"] = serialize($account);
         $_SESSION["isLoggedIn"] = true;
         header("Location: index.php");
     }
