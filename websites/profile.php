@@ -91,7 +91,7 @@ $email = $accHand->get_email($username);
                         <?php
                         include_once '../php/FileHandler.php';
 
-                        $username = $_SESSION['username'];
+                        $username = unserialize($_SESSION['account'])["username"];
 
                         $profile_picture_path = FileHandler::get_profile_picture_path($username);
 
@@ -104,7 +104,7 @@ $email = $accHand->get_email($username);
 
                 <!--Username-->
                 <tr>
-                    <td headers="i" id="username"><?php if ($isLoggedIn) echo "$_SESSION[username]" ?>
+                    <td headers="i" id="username"><?php if ($isLoggedIn) echo "$username" ?>
                         <hr>
                     </td>
                 </tr>

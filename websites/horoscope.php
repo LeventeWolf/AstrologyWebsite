@@ -76,7 +76,7 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
                     if ( $isLoggedIn) {
                         include_once '../php/FileHandler.php';
 
-                        $username = $_SESSION['username'];
+                        $username = unserialize($_SESSION['account'])["username"];
 
                         $profile_picture_path = FileHandler::get_profile_picture_path($username);
 
@@ -90,7 +90,7 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
 <!--                <tr><td><img src="../images/default_profile_picture.png" alt="default"></td></tr>-->
 
                 <!-- Username -->
-                <tr><td headers="i" id="username"><?php if ($isLoggedIn) echo "$_SESSION[username]" ?><hr></td></tr>
+                <tr><td headers="i" id="username"><?php if ($isLoggedIn) echo "$username" ?><hr></td></tr>
 
                 <!-- Planet -->
                 <tr><td></td></tr>

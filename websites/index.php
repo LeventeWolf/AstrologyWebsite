@@ -3,7 +3,7 @@
 
 if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
     $isLoggedIn = true;
-    $username = $_SESSION['username'];
+    $username = unserialize($_SESSION['account'])["username"];
 
     error_reporting(0);
     setcookie($username, $_COOKIE[$username] + 1, time() + (60*60*24*30), "/");
@@ -79,10 +79,10 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
                 <tr>
                     <td>
                         <?php
-                        if ( $isLoggedIn) {
+                        if ($isLoggedIn) {
                             include_once '../php/FileHandler.php';
 
-                            $username = $_SESSION['username'];
+                            $username = unserialize($_SESSION['account'])["username"];
 
                             $profile_picture_path = FileHandler::get_profile_picture_path($username);
 
@@ -96,7 +96,7 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
 
                 <!--Username-->
                 <tr>
-                    <td headers="i" id="username"><?php if ($isLoggedIn) echo "$_SESSION[username]" ?>
+                    <td headers="i" id="username"><?php if ($isLoggedIn) echo "$username" ?>
                         <hr>
                     </td>
                 </tr>
