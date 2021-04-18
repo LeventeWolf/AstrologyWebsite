@@ -5,10 +5,10 @@ include_once '../php/LoginHandler.php';
 
 $loginHandler = new LoginHandler();
 
-$username = $_POST["username"];
-$password = $_POST["password"];
+if (isset($_POST["submit"])){
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-if (isset($_POST["submit"])) {
     if (!$loginHandler->check_correct_login($username, $password)) {
         $error_msg = "Invalid username or password!";
     } else {
@@ -16,7 +16,8 @@ if (isset($_POST["submit"])) {
         $_SESSION["isLoggedIn"] = true;
         header("Location: index.php");
     }
-} ?>
+}
+?>
 
 <html lang="en">
 <head>

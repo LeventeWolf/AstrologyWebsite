@@ -18,6 +18,7 @@ class FileHandler
         fwrite($file, serialize($account) . "\n");
         fclose($file);
     }
+
     public function take_pic_to_folder(string $pic,string $account)
     {
         // összeállítjuk a cél útvonalat: ez most az images/<fájl neve> útvonal lesz
@@ -31,9 +32,6 @@ class FileHandler
         }
 
     }
-
-
-
 
     /* return with $accounts which stores all the accounts */
     public function read_accounts_from_file()
@@ -49,7 +47,6 @@ class FileHandler
 
         return $accounts;
     }
-
 
     /**
      * creates unique folder to ../userdata/users/ by username
@@ -68,7 +65,6 @@ class FileHandler
         mkdir("../userdata/users/" . "$username" . "/profile_pictures");
     }
 
-
     public static function is_profile_picture_exists($username){
         return file_exists("../userdata/users/".$username."/profile_pictures/active.png");
     }
@@ -78,7 +74,7 @@ class FileHandler
             return "../userdata/users/".$username."/profile_pictures/active.png";
         }
 
-        return "../userdata/user_icon/default.png";
+        return "../userdata/default_profile_picture.png";
     }
 
     public static function is_profile_picture_exists_maps($username){
@@ -92,6 +88,7 @@ class FileHandler
 
         return "../../userdata/user_icon/grandda.jpg";
     }
+
 }
     
 

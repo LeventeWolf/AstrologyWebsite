@@ -6,6 +6,14 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
     header('Location: login.php');
 }
 
+if (isset($_FILES["upload-btn"])) {
+    echo $_FILES['profile-pic']['name'];
+}
+
+include_once '../php/FileUploadHandler.php';
+$fileUploadHandler = new FileUploadHandler();
+$fileUploadHandler->upload();
+
 
 include_once '../php/AccountHandler.php';
 $accHand = new AccountHandler();
@@ -13,24 +21,6 @@ $accHand = new AccountHandler();
 $username = $_SESSION["username"];
 $email = $accHand->get_email($username);
 
-if (isset($_POST['submit-btn'])) {
-
-    if (!isset($_POST["profil-pic"]) )
-        $error_msg = "You must have an picture to upload!";
-
-    $pic = $_POST['profil-pic'];
-
-
-    if (!isset($error_msg)){
-        if (!$accHand->is_picture_valid($pic)) {
-            $error_msg = "This file extension is not proper!";
-        } else {
-            $fileHandler = $accHand->get_fileHandler();
-            $fileHandler->write_user_to_file($pic,$username);
-        }
-    }
-
-}
 ?>
 
 <html lang="hu">
@@ -145,17 +135,10 @@ if (isset($_POST['submit-btn'])) {
             <h2>Number of Visits:</h2>
             <?php echo "<div class='visits'> $_COOKIE[$username] </div> "; ?>
             <h2>Change profile picture</h2>
-            <form action="profile.php" method="POST">
-
+            <form action="profile.php" method="POST" enctype="multipart/form-data">
                 <label for="file-upload">Profilkép:</label>
-
-                <input type="file" id="file-upload" name="profile-pic" accept="image/*"/> <br/>
-
-                <input type="submit" name="upload-btn" value="Feltöltés"/>
-
-
-
-
+                <input type='file' name='image' accept="image/*"/>
+                <input type='submit' name='upload-btn' value='Upload'/>
             </form>
 
         </div>
@@ -168,7 +151,6 @@ if (isset($_POST['submit-btn'])) {
         Készítette: Wolf Levente és Molnár Ádám
     </footer>
 </div>
-
 
 </body>
 </html>

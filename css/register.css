@@ -26,7 +26,7 @@ body {
     /*A pozitív értékek jobbra/le a negatív értékek balra/fel történő eltolást eredményeznek.*/
     transform: translate(-50%, -50%); /*vízszintes, függöleges*/
     width: 20%;
-    height: 400px;
+    height: 420px;
     /*border: 5px solid rgba(49, 48, 60, 1);*/
 }
 
@@ -48,6 +48,19 @@ input {
     font-size: 17px;
     border: 1px solid silver;
     width: 100%;
+}
+
+#aszf {
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
+}
+
+input[type='checkbox'] {
+    position: absolute;
+    top: 4px;
+    float: right;
+    width: 20px;
 }
 
 .submit-btn {

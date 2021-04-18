@@ -5,6 +5,7 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
     $isLoggedIn = true;
     $username = $_SESSION['username'];
 
+    error_reporting(0);
     setcookie($username, $_COOKIE[$username] + 1, time() + (60*60*24*30), "/");
 
 } else {

@@ -45,8 +45,7 @@ if (isset($_POST['submit-btn'])) {
     if (!isset($error_msg)){
         $fileHandler = $registrationHandler->get_fileHandler();
         $fileHandler->write_user_to_file($username, $pwd1, $email);
-//        $fileHandler->create_folder_for_user($username);
-        $fileHandler->create_default_profile_pic();
+        $fileHandler->create_folder_for_user($username);
 
 
         $_SESSION["username"] = $username;

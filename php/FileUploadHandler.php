@@ -19,13 +19,7 @@ class FileUploadHandler
                 if ($this->is_upload_successful()) {
                     if ($this->is_file_size_okay()) {
                         $this->store_file();
-
-                        echo "Sikeres fájlfeltöltés <br/>";
-
-                        $this->redirect('../web/settings.php');
-                        return true;
-                        //TODO change FileUploadHandler.php to .class and derive an object to settings.php with action[SELF]
-                        //TODO show error boxes in settings.php
+                        $this->redirect('../websites/profile.php');
                     } else {
                         echo "A fájlméret túl nagy! <br/>";
                     }
@@ -65,6 +59,7 @@ class FileUploadHandler
         // fájl kiterjesztésének lekérdezése
         $kiterjesztes = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
         $_SESSION['filename'] = $_FILES["image"]["name"];
+
 
         if (in_array($kiterjesztes, $engedelyezett_kiterjesztesek))
             return true;
@@ -114,7 +109,6 @@ class FileUploadHandler
 
         copy($dest_active, $dest_copy);
     }
-
 
 
     /**
