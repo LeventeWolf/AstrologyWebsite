@@ -76,21 +76,23 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
                 </tr>
 
                 <!-- profile_pic -->
-                <td>
-                    <?php
-                    if ( $isLoggedIn) {
-                        include_once '../php/FileHandler.php';
+                <tr>
+                    <td>
+                        <?php
+                        if ( $isLoggedIn) {
+                            include_once '../php/FileHandler.php';
 
-                        $username = $_SESSION['username'];
+                            $username = $_SESSION['username'];
 
-                        $profile_picture_path = FileHandler::get_profile_picture_path($username);
+                            $profile_picture_path = FileHandler::get_profile_picture_path($username);
 
-                        echo "<img src=$profile_picture_path alt='default_icon'>";
-                    } else
-                        echo "<a href='login.php'> Bejelentkezés </a> "
-                    ?>
+                            echo "<img src=$profile_picture_path alt='default_icon'>";
+                        } else
+                            echo "<a href='login.php'> Bejelentkezés </a> "
+                        ?>
 
-                </td>
+                    </td>
+                </tr>
 
                 <!--Username-->
                 <tr>
