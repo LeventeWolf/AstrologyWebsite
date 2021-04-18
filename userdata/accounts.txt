@@ -1,1 +1,2 @@
-a:3:{s:8:"username";s:5:"admin";s:8:"password";s:10:"adminadmin";s:5:"email";s:24:"molnaradam8466@gmail.com";}
+a:3:{s:8:"username";s:5:"admin";s:8:"password";s:10:"adminadmin";s:5:"email";s:15:"admin@gmail.com";}
+a:3:{s:8:"username";s:5:"guest";s:8:"password";s:10:"guestguest";s:5:"email";s:15:"guest@gmail.com";}
