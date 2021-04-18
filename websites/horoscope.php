@@ -69,7 +69,9 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
             <table>
                 <!-- Profile_Picutre -->
 
-                <td>
+                <tr>
+                    <td>
+
                     <?php
                     if ( $isLoggedIn) {
                         include_once '../php/FileHandler.php';
@@ -83,7 +85,8 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
                         echo "<a href='login.php'> Bejelentkezés </a> "
                     ?>
 
-                </td>
+                    </td>
+                </tr>
 <!--                <tr><td><img src="../images/default_profile_picture.png" alt="default"></td></tr>-->
 
                 <!-- Username -->
