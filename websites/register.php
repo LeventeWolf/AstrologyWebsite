@@ -111,9 +111,7 @@ if (isset($_POST['submit-btn'])) {
         <div>
             <table>
                 <!-- profile_pic -->
-                <tr>
-                    <td><img src="../images/default_profile_picture.png" alt="default"></td>
-                </tr>
+<!--                <tr><td><img src="../images/default_profile_picture.png" alt="default"></td></tr>-->
 
                 <!-- username -->
                 <tr>

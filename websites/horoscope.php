@@ -40,6 +40,7 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
             <li><a href="index.php">Astrology</a></li>
 
             <?php if ($isLoggedIn) {
+
                 echo "
                 <!-- Profile -->
                 <li><a href='profile.php'>Profile</a></li>
@@ -68,7 +69,23 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
         <div>
             <table>
                 <!-- Profile_Picutre -->
-                <tr><td><img src="../images/default_profile_picture.png" alt="default"></td></tr>
+
+                <td>
+                    <?php
+                    if ( $isLoggedIn) {
+                        include_once '../php/FileHandler.php';
+
+                        $username = $_SESSION['username'];
+
+                        $profile_picture_path = FileHandler::get_profile_picture_path($username);
+
+                        echo "<img src=$profile_picture_path alt='default_icon'>";
+                    } else
+                        echo "<a href='login.php'> Bejelentkezés </a> "
+                    ?>
+
+                </td>
+<!--                <tr><td><img src="../images/default_profile_picture.png" alt="default"></td></tr>-->
 
                 <!-- Username -->
                 <tr><td headers="i" id="username"><?php if ($isLoggedIn) echo "$_SESSION[username]" ?><hr></td></tr>

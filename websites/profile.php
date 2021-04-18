@@ -9,6 +9,7 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
 
 include_once '../php/AccountHandler.php';
 $accHand = new AccountHandler();
+
 $username = $_SESSION["username"];
 $email = $accHand->get_email($username);
 
@@ -26,21 +27,10 @@ if (isset($_POST['submit-btn'])) {
         } else {
             $fileHandler = $accHand->get_fileHandler();
             $fileHandler->write_user_to_file($pic,$username);
-
-
         }
     }
 
 }
-?>
-
-include_once '../php/AccountHandler.php';
-$accountHandler = new AccountHandler();
-
-$username = $_SESSION["username"];
-$email = $accountHandler->get_email($username);
-
-
 ?>
 
 <html lang="hu">
@@ -107,7 +97,19 @@ $email = $accountHandler->get_email($username);
 
                 <!-- profile_pic -->
                 <tr>
-                    <td headers="i"><img src="../images/default_profile_picture.png" alt="default"></td>
+                    <td>
+                        <?php
+                        include_once '../php/FileHandler.php';
+
+                        $username = $_SESSION['username'];
+
+                        $profile_picture_path = FileHandler::get_profile_picture_path($username);
+
+                        echo "<img src=$profile_picture_path alt='default_icon'>";
+                        ?>
+
+                    </td>
+<!--                    <td headers="i"><img src="../images/default_profile_picture.png" alt="default"></td>-->
                 </tr>
 
                 <!--Username-->
@@ -150,6 +152,10 @@ $email = $accountHandler->get_email($username);
                 <input type="file" id="file-upload" name="profile-pic" accept="image/*"/> <br/>
 
                 <input type="submit" name="upload-btn" value="Feltöltés"/>
+
+
+
+
             </form>
 
         </div>

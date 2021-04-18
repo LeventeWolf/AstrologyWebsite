@@ -74,7 +74,19 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
                 <tr>
                     <!-- profile_pic -->
                     <td>
-                        <img src="../images/default_profile_picture.png" alt="default">
+                        <?php
+                        if ( $isLoggedIn) {
+                            include_once '../php/FileHandler.php';
+
+                            $username = $_SESSION['username'];
+
+                            $profile_picture_path = FileHandler::get_profile_picture_path($username);
+
+                            echo "<img src=$profile_picture_path alt='default_icon'>";
+                        } else
+                            echo "<a href='login.php'> Bejelentkezés </a> "
+                        ?>
+
                     </td>
                 </tr>
                 <tr>
@@ -271,6 +283,14 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
 
 
         </table>
+        <h2>Random bolygo generátor</h2>
+        <?php
+
+
+
+        ?>
+
+
 
         <h2>
             Űrzene

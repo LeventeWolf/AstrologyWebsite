@@ -67,7 +67,7 @@ if (isset($_POST["submit"])) {
         <div>
             <table>
                 <!-- Profile_Picture -->
-                <tr> <td><img src="../images/default_profile_picture.png" alt="default"></td></tr>
+
 
                 <!--Username-->
                 <tr>

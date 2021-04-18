@@ -22,6 +22,14 @@ class AccountHandler extends Handler
 
     public function is_picture_valid(string $picture): int
     {
+
+        $fajlnev = $_FILES["profile-pic"]["name"];
+        $darabok = explode(".", $fajlnev);            // fájlnév feldarabolása pont karakterek mentén
+        $kiterjesztes = strtolower(end($darabok));    // a feldarabolás után kapott értékek közül az utolsó lesz a kiterjesztés
+
+        echo "A fájl kiterjesztése: $kiterjesztes <br/>";   // "A fájl kiterjesztése: jpg"
+
+            /*
         $file_parts = pathinfo($picture);
 
         switch ($file_parts['extension']) {
@@ -31,7 +39,10 @@ class AccountHandler extends Handler
 
         }
 
-        return 0;
+        echo "baj van";
+        return 0;*/
+
+        return 1;
     }
 
 
