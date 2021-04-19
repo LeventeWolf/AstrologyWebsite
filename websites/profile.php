@@ -82,7 +82,7 @@ $email = $accHand->get_email($username);
         <div>
             <table>
                 <tr>
-                    <th id="i"></th>
+                    <th></th>
                 </tr>
 
                 <!-- profile_pic -->
@@ -104,19 +104,19 @@ $email = $accHand->get_email($username);
 
                 <!--Username-->
                 <tr>
-                    <td headers="i" id="username"><?php if ($isLoggedIn) echo "$username" ?>
+                    <td><?php if ($isLoggedIn) echo "$username" ?>
                         <hr>
                     </td>
                 </tr>
 
                 <!-- Planet:-->
                 <tr>
-                    <td headers="i"></td>
+                    <td></td>
                 </tr>
 
                 <!--Zodiac sign:-->
                 <tr>
-                    <td headers="i"></td>
+                    <td></td>
                 </tr>
             </table>
         </div>
@@ -136,7 +136,7 @@ $email = $accHand->get_email($username);
             <?php echo "<div class='visits'> $_COOKIE[$username] </div> "; ?>
             <h2>Change profile picture</h2>
             <form action="profile.php" method="POST" enctype="multipart/form-data">
-                <label for="file-upload">Profilkép:</label>
+                <label>Profilkép:</label>
                 <input type='file' name='image' accept="image/*"/>
                 <input type='submit' name='upload-btn' value='Upload'/>
             </form>

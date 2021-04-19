@@ -156,8 +156,6 @@ if (isset($_POST['submit-btn'])) {
                     <label>E-mail: <input type="email" name="email" /></label> <br/>
 
 
-
-                    <comment>
                         <!--mezőcsoportosítás-->
                         <!--                <fieldset>-->
                         <!--mezőcsoportosítás felirata-->
@@ -204,8 +202,6 @@ if (isset($_POST['submit-btn'])) {
                         <!---->
                         <!---->
                         <!--                <input type="reset" name="reset-btn" value="Adatok törlése"/>-->
-
-                    </comment>
                 </div>
 
 
