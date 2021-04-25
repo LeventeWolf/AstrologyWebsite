@@ -89,7 +89,7 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
                     </td>
                 </tr>
                 <tr>
-                    <td id="username"><?php if ($isLoggedIn) { echo "$username";} ?>
+                    <td ><?php if ($isLoggedIn) { echo "$username";} ?>
                         <hr>
                     </td>
                 </tr>

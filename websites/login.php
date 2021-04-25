@@ -114,12 +114,12 @@ if (isset($_POST["submit"])){
                 echo "<div class='labels'>
                         <!--Username-->
                         <label>Felhasználónév:<br> 
-                            <input class=$blink type=text name=username required value=$username >
+                            <input class='$blink' type=text name=username required value='$username' >
                         </label> <br/>
         
                         <!--Password-->
                         <label>Jelszó:<br>
-                            <input class=$blink value=$password type=password name=password required />
+                            <input class='$blink' value='$password' type=password name=password required />
                         </label> <br/>
                     </div>";
 

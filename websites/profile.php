@@ -136,7 +136,7 @@ $email = $accHand->get_email($username);
             <?php echo "<div class='visits'> $_COOKIE[$username] </div> "; ?>
             <h2>Change profile picture</h2>
             <form action="profile.php" method="POST" enctype="multipart/form-data">
-                <label for="file-upload">Profilkép:</label>
+                <label>Profilkép:</label>
                 <input type='file' name='image' accept="image/*"/>
                 <input type='submit' name='upload-btn' value='Upload'/>
             </form>

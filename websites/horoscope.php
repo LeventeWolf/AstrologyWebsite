@@ -90,7 +90,7 @@ if (isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"]) {
 <!--                <tr><td><img src="../images/default_profile_picture.png" alt="default"></td></tr>-->
 
                 <!-- Username -->
-                <tr><td headers="i" id="username"><?php if ($isLoggedIn) echo "$username" ?><hr></td></tr>
+                <tr><td><?php if ($isLoggedIn) echo "$username" ?><hr></td></tr>
 
                 <!-- Planet -->
                 <tr><td></td></tr>
